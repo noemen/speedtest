@@ -1,0 +1,455 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>nPerf Speed Test</title>
+
+    <link rel="stylesheet" type="text/css" href="https://media.nperf.com/webplugin/dist/SpeedTest/2.1.2/css/nPartners-expert-light.min.css">
+
+    <style>
+        .Main {
+            background-color: #ffffff
+        }
+
+        .Main .MobileAppPopup {
+            background-color: #ffffff
+        }
+
+        .SpeedTest>.welcomePanel>.tooltip>.icon {
+            color: #ffffff
+        }
+
+        .Main .MobileAppPopup {
+            border-color: #0099ff
+        }
+
+        .SpeedTest>.selectUnitLayer {
+            border-color: #0099ff
+        }
+
+        .SpeedTest>.shareLayer {
+            border-color: #0099ff
+        }
+
+        .SpeedTestSelectServer {
+            border-color: #0099ff
+        }
+
+        .SpeedTest>.selectUnitLayer>.chooseUnitTitle {
+            color: #0099ff
+        }
+
+        .SpeedTestSelectServer>.title {
+            color: #0099ff
+        }
+
+        .SpeedTest>.resultPanel>.peakLabel {
+            color: #0099ff
+        }
+
+        .SpeedTest>.resultPanel>.peakValue {
+            color: #0099ff
+        }
+
+        .SpeedTest>.resultPanel>.peakUnit {
+            color: #0099ff
+        }
+
+        .SpeedTest>.resultPanel>.minLabel {
+            color: #0099ff
+        }
+
+        .SpeedTest>.resultPanel>.minValue {
+            color: #0099ff
+        }
+
+        .SpeedTest>.resultPanel>.minUnit {
+            color: #0099ff
+        }
+
+        .SpeedTest>.infoPanel>.info>.label {
+            color: #0099ff
+        }
+
+        .SpeedTest>.welcomePanel>.tooltip>.title {
+            color: #0099ff
+        }
+
+        .SpeedTest>.resultPanel {
+            border-color: #0099ff
+        }
+
+        .SpeedTest>.infoPanel {
+            border-color: #0099ff
+        }
+
+        .SpeedTest>.resultPanel>.blockTitle.testing {
+            color: #0099ff
+        }
+
+        .SpeedTest>.resultPanel>.blockIcon.testing {
+            color: #0099ff
+        }
+
+        .Main .MobileAppPopup>.closeButton {
+            color: #005c99
+        }
+
+        .SpeedTest button.closeButton {
+            color: #005c99
+        }
+
+        .SpeedTest>.selectUnitButton {
+            color: #005c99
+        }
+
+        .SpeedTestSelectServer>.closeButton {
+            color: #005c99
+        }
+
+        .SpeedTest>.selectUnitLayer>button {
+            color: #005c99
+        }
+
+        .SpeedTest>.shareLayer>button.closeButton {
+            color: #005c99
+        }
+
+        .SpeedTestSelectServer button.hostServer {
+            background-color: #005c99
+        }
+
+        .SpeedTest button.closeButton:hover {
+            color: #64fdff
+        }
+
+        .SpeedTest>.selectUnitButton:hover {
+            color: #64fdff
+        }
+
+        .SpeedTestSelectServer>.closeButton:hover {
+            color: #64fdff
+        }
+
+        .SpeedTest>.selectUnitLayer>button:hover {
+            color: #64fdff
+        }
+
+        .SpeedTest>.shareLayer>button.closeButton:hover {
+            color: #64fdff
+        }
+
+        .SpeedTestSelectServer button.hostServer:hover {
+            background-color: #64fdff
+        }
+
+        .SpeedTest .unitButton:not(.selected)>button {
+            color: #ffffff
+        }
+
+        .SpeedTest .unitButton:not(.selected)>button:hover {
+            color: #ffffff
+        }
+
+        .SpeedTest .unitButton.selected>button {
+            color: #ffffff
+        }
+
+        .SpeedTest .unitButton:not(.selected)>button {
+            border-color: #005c99
+        }
+
+        .SpeedTest .unitButton:not(.selected)>button:hover {
+            border-color: #0099ff
+        }
+
+        .SpeedTest .unitButton.selected>button {
+            border-color: #6a6a6a
+        }
+
+        .SpeedTest .unitButton:not(.selected)>button {
+            background-color: #005c99
+        }
+
+        .SpeedTest .unitButton:not(.selected)>button:hover {
+            background-color: #0099ff
+        }
+
+        .SpeedTest .unitButton.selected>button {
+            background-color: #6a6a6a
+        }
+
+        .SpeedTest .unitButton:not(.selected)>span {
+            color: #0099ff
+        }
+
+        .SpeedTest .unitButton.selected>span {
+            color: #0099ff
+        }
+
+        .SpeedTest>.serverPanel>.pool>button,
+        .SpeedTest>.serverPanel>.poolAuto>button {
+            border-color: #005c99
+        }
+
+        .SpeedTestSelectServer .pool>button,
+        .SpeedTestSelectServer .poolAuto>button {
+            border-color: #005c99
+        }
+
+        .SpeedTest>.locationPanel {
+            border-color: #005c99
+        }
+
+        .SpeedTestSelectServer>.list>.pool {
+            border-color: #005c99
+        }
+
+        .SpeedTestSelectServer>.poolAuto {
+            border-color: #005c99
+        }
+
+        .SpeedTest>.serverPanel>.pool>button,
+        .SpeedTest>.serverPanel>.poolAuto>button {
+            background-color: #005c99
+        }
+
+        .SpeedTestSelectServer .pool>button,
+        .SpeedTestSelectServer .poolAuto>button {
+            background-color: #005c99
+        }
+
+        .SpeedTest>.locationPanel {
+            background-color: #005c99
+        }
+
+        .SpeedTest>.serverPanel>.pool>button:hover,
+        .SpeedTest>.serverPanel>.poolAuto>button:hover {
+            background-color: #0099ff
+        }
+
+        .SpeedTestSelectServer .pool>button:hover,
+        .SpeedTestSelectServer .poolAuto>button:hover {
+            background-color: #0099ff
+        }
+
+        .SpeedTest>.serverPanel>.pool>button,
+        .SpeedTest>.serverPanel>.poolAuto>button {
+            color: #ffffff
+        }
+
+        .SpeedTestSelectServer .pool>button,
+        .SpeedTestSelectServer .poolAuto>button {
+            color: #ffffff
+        }
+
+        .SpeedTest>.locationPanel {
+            color: #ffffff
+        }
+
+        .SpeedTest>.serverPanel>.pool:hover>button,
+        .SpeedTest>.serverPanel>.poolAuto>button:hover {
+            color: #ffffff
+        }
+
+        .SpeedTestSelectServer .pool>button:hover,
+        .SpeedTestSelectServer .poolAuto>button:hover {
+            color: #ffffff
+        }
+
+        .SpeedTest>.locationPanel>svg>path {
+            fill: #ffffff
+        }
+
+        .SpeedTest>.locationPanel>svg>circle {
+            fill: #005c99
+        }
+
+        .SpeedTest .poolAuto .primary {
+            fill: #ffffff
+        }
+
+        .SpeedTest .pool .primary {
+            fill: #ffffff
+        }
+
+        .SpeedTest .poolAuto .secondary {
+            fill: #ffffff
+        }
+
+        .SpeedTest .pool .secondary {
+            fill: #ffffff
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0;" onload="onLoad()">
+
+    <div class="Main" style="transform: scale(1.35667);">
+        <div style="position: relative; width: 600px; height: 400px;">
+            <div class="Splash" style="display: table-cell; visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="480px" height="480px" viewBox="0 0 480 480" enable-background="new 0 0 480 480" xml:space="preserve" class="loader" style="visibility: hidden;">    <g>        <g>            <path d="M240.82,427.041c-98.277,0-179.058-76.001-186.704-172.275l20.214,22.648c8.629,9.597,23.363,10.476,33.034,1.868                c9.582-8.576,10.394-23.378,1.81-32.967l-65.146-72.964l-23.416-27.86c-1.69,3.991-3.306,8.063-4.824,12.181                c-4.937,13.506-8.622,27.533-11.057,41.842c-2.233,13.178-3.306,26.684-3.306,40.338c0,63.978,24.882,124.067,70.038,169.245                c45.267,45.193,105.365,70.09,169.357,70.09c4.281,0,8.563-0.119,12.844-0.327l14.197-53.785                C259.054,426.386,249.985,427.041,240.82,427.041z"></path>        </g>        <g>            <path d="M414.95,75.61c-1.579-1.69-3.254-3.425-4.862-5.048C364.813,25.333,304.738,0.398,240.82,0.398                c-63.992,0-124.09,24.934-169.357,70.164c-13.394,13.431-25.016,28.173-34.754,43.905l35.953,42.915                C103.232,95.37,167.075,52.56,240.82,52.56c27.376,0,53.502,5.971,76.991,16.64l-21.755,10.445l-17.958,8.473                c-11.592,5.473-16.573,19.395-11.049,31.077c5.495,11.645,19.425,16.625,31.047,11.168l66.055-31.248l0,0L414.95,75.61z"></path>        </g>        <g>            <path d="M436.095,101.289l-48.483,22.507c25.321,31.933,40.412,72.271,40.412,116.057c0,58.564-26.951,110.853-69.232,145.286                l3.35-14.265l4.602-19.253c2.926-12.523-4.772-25.165-17.28-28.113c-12.583-3.008-25.15,4.765-28.136,17.287l-20.988,87.602                l-12.188,46.13c45.848-9.112,88.04-31.612,121.938-65.429c45.193-45.178,70.075-105.268,70.075-169.245                C480.163,189.493,464.729,141.501,436.095,101.289z"></path>        </g>    </g>    </svg>
+                <div class="warning" style="visibility: hidden;"></div>
+                <div class="message">Localização: GeoIP</div><img class="engine" crossorigin="Anonymous" src="https://media.nperf.com/webplugin/nPerf-engine-bglight.png"></div>
+            <div class="SpeedTest" style="visibility: visible;">
+                <div class="toast">Test de toast !!!</div>
+                <div class="welcomePanel" style="visibility: hidden;">
+                    <div class="chooseUnitTitle">Unidade da taxa de transferência</div>
+                    <div class="unitButton unit-0"><button data-unit="0">kb/s</button><span>Kilobits por segundo</span></div>
+                    <div class="unitButton unit-1 selected"><button data-unit="1">Mb/s</button><span>megabits por segundo</span></div>
+                    <div class="unitButton unit-2"><button data-unit="2">kiB/s</button><span>kilobytes por segundo</span></div>
+                    <div class="unitButton unit-3"><button data-unit="3">MiB/s</button><span>megabytes por segundo</span></div>
+                    <div class="tooltip">
+                        <div class="title">Como otimizar os seus testes?</div>
+                        <div class="icon"></div>
+                        <div class="text">Para medir corretamente sua conexão, pense em parar todos os downloads ativos no seu computador, mas igualmente em outros equipamentos ligados ao seu modem de Internet (outros computadores, tablets, smartphones, consoles de jogos).<br>
+                            <br> Prefira uma conexão telegráfica à uma conexão WiFi ou CPL, estes últimos são bem menos estáveis à débitos elevados.<br>
+                            <br> Sinta-se livre para fazer o teste várias vezes para verificar a estabilidade dos resultados.</div>
+                    </div>
+                    <div class="poolAuto"><button data-poolid="0" data-ipv6="undefined" class="active">Seleção automática do servidor</button><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="108px" height="112px" viewBox="0 0 108 112" class="undefined">                <symbol id="basProxy" viewBox="-13.5 0 27 6">                <path class="secondary" fill-rule="evenodd" clip-rule="evenodd" fill="#94C13D" d="M-13.5,2.5c0,0.333,0.167,0.5,0.5,0.5h9.5V1.95H-13                C-13.333,1.95-13.5,2.133-13.5,2.5z M3.5,1.95V3h9.4c0.4,0,0.6-0.167,0.6-0.5c0-0.167-0.067-0.283-0.2-0.35                c-0.1-0.133-0.233-0.2-0.4-0.2H3.5z M1,4.5h0.85c0.467,0,0.7-0.217,0.7-0.65v-3.2C2.55,0.217,2.317,0,1.85,0h-3.6                c-0.467,0-0.7,0.217-0.7,0.65v3.2c0,0.433,0.233,0.65,0.7,0.65h0.85V6H1V4.5z"></path>                </symbol>                <symbol id="fondProxy" viewBox="0 -13 27 13">                <path class="primary" fill-rule="evenodd" clip-rule="evenodd" fill="#3C3C3B" d="M2-3l5,3h13l5-3H2z M4.45-5C4.15-5,4-5.167,4-5.5v-6.1                C4-11.867,4.15-12,4.45-12C4.817-12,5-11.867,5-11.6v6.1C5-5.167,4.817-5,4.45-5z M3-5.5C3-5.167,2.817-5,2.45-5                C2.15-5,2-5.167,2-5.5v-6.1C2-11.867,2.15-12,2.45-12C2.817-12,3-11.867,3-11.6V-5.5z M7-5.5C7-5.167,6.817-5,6.45-5                C6.15-5,6-5.167,6-5.5v-6.1C6-11.867,6.15-12,6.45-12C6.817-12,7-11.867,7-11.6V-5.5z M24.5-5.5c-0.3,0-0.55-0.1-0.75-0.3                c-0.167-0.233-0.25-0.483-0.25-0.75c0-0.267,0.083-0.483,0.25-0.65c0.233-0.2,0.483-0.3,0.75-0.3s0.5,0.1,0.7,0.3                c0.2,0.167,0.3,0.383,0.3,0.65C25.5-5.85,25.167-5.5,24.5-5.5z M26.8-5.35L27-5.9v-4.9c0-0.6-0.217-1.117-0.65-1.55                C25.883-12.783,25.333-13,24.7-13H2.3c-0.633,0-1.183,0.217-1.65,0.65C0.217-11.917,0-11.4,0-10.8v4.9l0.2,0.65                C0.567-4.483,1.2-4.067,2.1-4h22.6c0.466,0,0.9-0.117,1.3-0.35C26.4-4.617,26.667-4.95,26.8-5.35z"></path>                </symbol>                <symbol id="inProxy" viewBox="0 -7 23.5 7">                <path class="secondary" fill-rule="evenodd" clip-rule="evenodd" fill="#94C13D" d="M22.5-2.5c-0.267,0-0.517,0.1-0.75,0.3                c-0.167,0.167-0.25,0.383-0.25,0.65c0,0.267,0.083,0.517,0.25,0.75c0.2,0.2,0.45,0.3,0.75,0.3c0.667,0,1-0.35,1-1.05                c0-0.267-0.1-0.483-0.3-0.65C23-2.4,22.767-2.5,22.5-2.5z M1-0.5v-6.1C1-6.867,0.817-7,0.45-7C0.15-7,0-6.867,0-6.6v6.1                C0-0.167,0.15,0,0.45,0C0.817,0,1-0.167,1-0.5z M2.45,0C2.817,0,3-0.167,3-0.5v-6.1C3-6.867,2.817-7,2.45-7C2.15-7,2-6.867,2-6.6                v6.1C2-0.167,2.15,0,2.45,0z M5-0.5v-6.1C5-6.867,4.817-7,4.45-7C4.15-7,4-6.867,4-6.6v6.1C4-0.167,4.15,0,4.45,0                C4.817,0,5-0.167,5-0.5z"></path>                </symbol>                <use xlink:href="#inProxy" width="23.5" height="7" y="-7" transform="matrix(3.2166 0 0 -3.2166 16.7827 52.7505)" overflow="visible"></use>                <use xlink:href="#basProxy" width="27" height="6" x="-13.5" transform="matrix(3.2166 0 0 -3.2166 53.7744 101)" overflow="visible"></use>                <use xlink:href="#fondProxy" width="27" height="13" y="-13" transform="matrix(3.2166 0 0 -3.2166 10.3496 36.667)" overflow="visible"></use>                </svg></div><button class="selectServerButton">Selecão do servidor</button></div>
+                <div class="resultPanel" style="right: -252px; transition: right 500ms ease; visibility: hidden;">
+                    <div class="compareLayer" style="visibility: hidden;"><button class="closeButton"></button></div>
+                    <div class="blockTitle download initial">Baixar</div>
+                    <div class="blockIcon download initial">
+                        <div></div>
+                    </div>
+                    <div class="averageLabel download">Média</div>
+                    <div class="averageValue download"></div>
+                    <div class="peakLabel download">Pico</div>
+                    <div class="peakValue download"></div>
+                    <div class="peakUnit download">Mb/s</div>
+                    <div class="coming download">Teste em preparação…</div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="480px" height="480px" viewBox="0 0 480 480" enable-background="new 0 0 480 480" xml:space="preserve" class="loader download">    <g>        <g>            <path d="M240.82,427.041c-98.277,0-179.058-76.001-186.704-172.275l20.214,22.648c8.629,9.597,23.363,10.476,33.034,1.868                c9.582-8.576,10.394-23.378,1.81-32.967l-65.146-72.964l-23.416-27.86c-1.69,3.991-3.306,8.063-4.824,12.181                c-4.937,13.506-8.622,27.533-11.057,41.842c-2.233,13.178-3.306,26.684-3.306,40.338c0,63.978,24.882,124.067,70.038,169.245                c45.267,45.193,105.365,70.09,169.357,70.09c4.281,0,8.563-0.119,12.844-0.327l14.197-53.785                C259.054,426.386,249.985,427.041,240.82,427.041z"></path>        </g>        <g>            <path d="M414.95,75.61c-1.579-1.69-3.254-3.425-4.862-5.048C364.813,25.333,304.738,0.398,240.82,0.398                c-63.992,0-124.09,24.934-169.357,70.164c-13.394,13.431-25.016,28.173-34.754,43.905l35.953,42.915                C103.232,95.37,167.075,52.56,240.82,52.56c27.376,0,53.502,5.971,76.991,16.64l-21.755,10.445l-17.958,8.473                c-11.592,5.473-16.573,19.395-11.049,31.077c5.495,11.645,19.425,16.625,31.047,11.168l66.055-31.248l0,0L414.95,75.61z"></path>        </g>        <g>            <path d="M436.095,101.289l-48.483,22.507c25.321,31.933,40.412,72.271,40.412,116.057c0,58.564-26.951,110.853-69.232,145.286                l3.35-14.265l4.602-19.253c2.926-12.523-4.772-25.165-17.28-28.113c-12.583-3.008-25.15,4.765-28.136,17.287l-20.988,87.602                l-12.188,46.13c45.848-9.112,88.04-31.612,121.938-65.429c45.193-45.178,70.075-105.268,70.075-169.245                C480.163,189.493,464.729,141.501,436.095,101.289z"></path>        </g>    </g>    </svg>
+                    <div class="blockTitle upload initial">Upload</div>
+                    <div class="blockIcon upload initial">
+                        <div></div>
+                    </div>
+                    <div class="averageLabel upload">Média</div>
+                    <div class="averageValue upload"></div>
+                    <div class="peakLabel upload">Pico</div>
+                    <div class="peakValue upload"></div>
+                    <div class="peakUnit upload"></div>
+                    <div class="coming upload">Teste em preparação…</div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="480px" height="480px" viewBox="0 0 480 480" enable-background="new 0 0 480 480" xml:space="preserve" class="loader upload">    <g>        <g>            <path d="M240.82,427.041c-98.277,0-179.058-76.001-186.704-172.275l20.214,22.648c8.629,9.597,23.363,10.476,33.034,1.868                c9.582-8.576,10.394-23.378,1.81-32.967l-65.146-72.964l-23.416-27.86c-1.69,3.991-3.306,8.063-4.824,12.181                c-4.937,13.506-8.622,27.533-11.057,41.842c-2.233,13.178-3.306,26.684-3.306,40.338c0,63.978,24.882,124.067,70.038,169.245                c45.267,45.193,105.365,70.09,169.357,70.09c4.281,0,8.563-0.119,12.844-0.327l14.197-53.785                C259.054,426.386,249.985,427.041,240.82,427.041z"></path>        </g>        <g>            <path d="M414.95,75.61c-1.579-1.69-3.254-3.425-4.862-5.048C364.813,25.333,304.738,0.398,240.82,0.398                c-63.992,0-124.09,24.934-169.357,70.164c-13.394,13.431-25.016,28.173-34.754,43.905l35.953,42.915                C103.232,95.37,167.075,52.56,240.82,52.56c27.376,0,53.502,5.971,76.991,16.64l-21.755,10.445l-17.958,8.473                c-11.592,5.473-16.573,19.395-11.049,31.077c5.495,11.645,19.425,16.625,31.047,11.168l66.055-31.248l0,0L414.95,75.61z"></path>        </g>        <g>            <path d="M436.095,101.289l-48.483,22.507c25.321,31.933,40.412,72.271,40.412,116.057c0,58.564-26.951,110.853-69.232,145.286                l3.35-14.265l4.602-19.253c2.926-12.523-4.772-25.165-17.28-28.113c-12.583-3.008-25.15,4.765-28.136,17.287l-20.988,87.602                l-12.188,46.13c45.848-9.112,88.04-31.612,121.938-65.429c45.193-45.178,70.075-105.268,70.075-169.245                C480.163,189.493,464.729,141.501,436.095,101.289z"></path>        </g>    </g>    </svg>
+                    <div class="blockTitle latency initial">Latência</div>
+                    <div class="blockIcon latency initial"></div>
+                    <div class="averageLabel latency">Média</div>
+                    <div class="averageValue latency"></div>
+                    <div class="jitterLabel latency">Jitter</div>
+                    <div class="jitterValue latency"></div>
+                    <div class="minLabel latency">Mínimo</div>
+                    <div class="minValue latency"></div>
+                    <div class="minUnit latency"></div>
+                    <div class="coming latency">Teste em preparação…</div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="480px" height="480px" viewBox="0 0 480 480" enable-background="new 0 0 480 480" xml:space="preserve" class="loader latency">    <g>        <g>            <path d="M240.82,427.041c-98.277,0-179.058-76.001-186.704-172.275l20.214,22.648c8.629,9.597,23.363,10.476,33.034,1.868                c9.582-8.576,10.394-23.378,1.81-32.967l-65.146-72.964l-23.416-27.86c-1.69,3.991-3.306,8.063-4.824,12.181                c-4.937,13.506-8.622,27.533-11.057,41.842c-2.233,13.178-3.306,26.684-3.306,40.338c0,63.978,24.882,124.067,70.038,169.245                c45.267,45.193,105.365,70.09,169.357,70.09c4.281,0,8.563-0.119,12.844-0.327l14.197-53.785                C259.054,426.386,249.985,427.041,240.82,427.041z"></path>        </g>        <g>            <path d="M414.95,75.61c-1.579-1.69-3.254-3.425-4.862-5.048C364.813,25.333,304.738,0.398,240.82,0.398                c-63.992,0-124.09,24.934-169.357,70.164c-13.394,13.431-25.016,28.173-34.754,43.905l35.953,42.915                C103.232,95.37,167.075,52.56,240.82,52.56c27.376,0,53.502,5.971,76.991,16.64l-21.755,10.445l-17.958,8.473                c-11.592,5.473-16.573,19.395-11.049,31.077c5.495,11.645,19.425,16.625,31.047,11.168l66.055-31.248l0,0L414.95,75.61z"></path>        </g>        <g>            <path d="M436.095,101.289l-48.483,22.507c25.321,31.933,40.412,72.271,40.412,116.057c0,58.564-26.951,110.853-69.232,145.286                l3.35-14.265l4.602-19.253c2.926-12.523-4.772-25.165-17.28-28.113c-12.583-3.008-25.15,4.765-28.136,17.287l-20.988,87.602                l-12.188,46.13c45.848-9.112,88.04-31.612,121.938-65.429c45.193-45.178,70.075-105.268,70.075-169.245                C480.163,189.493,464.729,141.501,436.095,101.289z"></path>        </g>    </g>    </svg>
+                    <div class="separator sep-1"></div>
+                    <div class="separator sep-2"></div>
+                    <div class="chartLayer" style="visibility: visible;">
+                        <div class="chartStatIcon"></div>
+                        <div class="chartIcon download"></div>
+                        <div class="chartIcon upload"></div>
+                        <div class="chartIcon latency"></div>
+                        <div class="chartTitle download">Baixar</div>
+                        <div class="chartTitle upload">Upload</div>
+                        <div class="chartTitle latency">Latência</div>
+                        <div class="chart download"><canvas></canvas></div>
+                        <div class="chart upload"><canvas></canvas></div>
+                        <div class="chart latency"><canvas></canvas></div>
+                    </div>
+                </div>
+                <div class="serverPanel" style="visibility: visible;"><button class="selectServerButton">Selecão do servidor</button>
+                    <div class="poolAuto"><button data-poolid="0" data-ipv6="undefined" class="active">Seleção automática do servidor</button><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="108px" height="112px" viewBox="0 0 108 112" class="undefined">                <symbol id="basProxy" viewBox="-13.5 0 27 6">                <path class="secondary" fill-rule="evenodd" clip-rule="evenodd" fill="#94C13D" d="M-13.5,2.5c0,0.333,0.167,0.5,0.5,0.5h9.5V1.95H-13                C-13.333,1.95-13.5,2.133-13.5,2.5z M3.5,1.95V3h9.4c0.4,0,0.6-0.167,0.6-0.5c0-0.167-0.067-0.283-0.2-0.35                c-0.1-0.133-0.233-0.2-0.4-0.2H3.5z M1,4.5h0.85c0.467,0,0.7-0.217,0.7-0.65v-3.2C2.55,0.217,2.317,0,1.85,0h-3.6                c-0.467,0-0.7,0.217-0.7,0.65v3.2c0,0.433,0.233,0.65,0.7,0.65h0.85V6H1V4.5z"></path>                </symbol>                <symbol id="fondProxy" viewBox="0 -13 27 13">                <path class="primary" fill-rule="evenodd" clip-rule="evenodd" fill="#3C3C3B" d="M2-3l5,3h13l5-3H2z M4.45-5C4.15-5,4-5.167,4-5.5v-6.1                C4-11.867,4.15-12,4.45-12C4.817-12,5-11.867,5-11.6v6.1C5-5.167,4.817-5,4.45-5z M3-5.5C3-5.167,2.817-5,2.45-5                C2.15-5,2-5.167,2-5.5v-6.1C2-11.867,2.15-12,2.45-12C2.817-12,3-11.867,3-11.6V-5.5z M7-5.5C7-5.167,6.817-5,6.45-5                C6.15-5,6-5.167,6-5.5v-6.1C6-11.867,6.15-12,6.45-12C6.817-12,7-11.867,7-11.6V-5.5z M24.5-5.5c-0.3,0-0.55-0.1-0.75-0.3                c-0.167-0.233-0.25-0.483-0.25-0.75c0-0.267,0.083-0.483,0.25-0.65c0.233-0.2,0.483-0.3,0.75-0.3s0.5,0.1,0.7,0.3                c0.2,0.167,0.3,0.383,0.3,0.65C25.5-5.85,25.167-5.5,24.5-5.5z M26.8-5.35L27-5.9v-4.9c0-0.6-0.217-1.117-0.65-1.55                C25.883-12.783,25.333-13,24.7-13H2.3c-0.633,0-1.183,0.217-1.65,0.65C0.217-11.917,0-11.4,0-10.8v4.9l0.2,0.65                C0.567-4.483,1.2-4.067,2.1-4h22.6c0.466,0,0.9-0.117,1.3-0.35C26.4-4.617,26.667-4.95,26.8-5.35z"></path>                </symbol>                <symbol id="inProxy" viewBox="0 -7 23.5 7">                <path class="secondary" fill-rule="evenodd" clip-rule="evenodd" fill="#94C13D" d="M22.5-2.5c-0.267,0-0.517,0.1-0.75,0.3                c-0.167,0.167-0.25,0.383-0.25,0.65c0,0.267,0.083,0.517,0.25,0.75c0.2,0.2,0.45,0.3,0.75,0.3c0.667,0,1-0.35,1-1.05                c0-0.267-0.1-0.483-0.3-0.65C23-2.4,22.767-2.5,22.5-2.5z M1-0.5v-6.1C1-6.867,0.817-7,0.45-7C0.15-7,0-6.867,0-6.6v6.1                C0-0.167,0.15,0,0.45,0C0.817,0,1-0.167,1-0.5z M2.45,0C2.817,0,3-0.167,3-0.5v-6.1C3-6.867,2.817-7,2.45-7C2.15-7,2-6.867,2-6.6                v6.1C2-0.167,2.15,0,2.45,0z M5-0.5v-6.1C5-6.867,4.817-7,4.45-7C4.15-7,4-6.867,4-6.6v6.1C4-0.167,4.15,0,4.45,0                C4.817,0,5-0.167,5-0.5z"></path>                </symbol>                <use xlink:href="#inProxy" width="23.5" height="7" y="-7" transform="matrix(3.2166 0 0 -3.2166 16.7827 52.7505)" overflow="visible"></use>                <use xlink:href="#basProxy" width="27" height="6" x="-13.5" transform="matrix(3.2166 0 0 -3.2166 53.7744 101)" overflow="visible"></use>                <use xlink:href="#fondProxy" width="27" height="13" y="-13" transform="matrix(3.2166 0 0 -3.2166 10.3496 36.667)" overflow="visible"></use>                </svg></div>
+                </div>
+                <div class="infoPanel" style="left: -252px; transition: left 500ms ease; visibility: hidden;">
+                    <div class="info">
+                        <div class="isp label">Operador:</div>
+                        <div class="isp value">Oi</div>
+                        <div class="techno label">Tipo de conexão :</div>
+                        <div class="techno value">desconhecido</div>
+                        <div class="ipv4 label">IPv4:</div>
+                        <div class="ipv4 value">189.81.7.147</div>
+                        <div class="ipv6 label">IPv6:</div>
+                        <div class="ipv6 value unavailable">IPv6 indisponível</div>
+                        <div class="asn label">ASN:</div>
+                        <div class="asn value">AS7738</div>
+                        <div class="browser label">Navegador</div>
+                        <div class="browser value">Chrome 58.0</div>
+                        <div class="system label">Sistema</div>
+                        <div class="system value">Win7 [64 bits]</div>
+                        <div class="separator sep-1"></div>
+                        <div class="separator sep-2"></div>
+                        <div class="separator sep-3"></div>
+                    </div>
+                </div>
+                <div class="locationPanel" style="visibility: visible;">
+                    <div class="address">Aracaju, Sergipe, BR</div>
+                    <div class="coord">-10.91670°S / -37.06670°O</div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="25px" height="40px" viewBox="0 0 25 40" class="icon">                <path fill="#232323" d="M25,12.43C25,19.292,12.5,34,12.5,34S0,19.292,0,12.43C0,5.564,5.597,0,12.5,0C19.404,0,25,5.564,25,12.43z"></path>                <circle fill="#94C13D" cx="12.5" cy="12.498" r="9"></circle>                </svg></div>
+                <div class="popup" style="top: -62px; transition: top 500ms ease; visibility: hidden;"></div>
+                <div class="selectUnitLayer" style="bottom: -178px; transition: bottom 500ms ease; visibility: hidden;">
+                    <div class="chooseUnitTitle">Unidade da taxa de transferência</div>
+                    <div class="unitButton unit-0"><button data-unit="0">kb/s</button><span>Kilobits por segundo</span></div>
+                    <div class="unitButton unit-1 selected"><button data-unit="1">Mb/s</button><span>megabits por segundo</span></div>
+                    <div class="unitButton unit-2"><button data-unit="2">kiB/s</button><span>kilobytes por segundo</span></div>
+                    <div class="unitButton unit-3"><button data-unit="3">MiB/s</button><span>megabytes por segundo</span></div><button class="closeButton"></button></div><button class="selectUnitButton"></button>
+                <div class="shareLayer" style="bottom: -301px; transition: bottom 500ms ease; visibility: hidden;">
+                    <div class="shareLabel">Compartilhar</div><img class="shareImage"><input class="shareUrl" readonly="">
+                    <div class="shareUrlIcon"></div><input class="shareImg" readonly="">
+                    <div class="shareImgIcon"></div><button class="fbButton"></button><button class="twitterButton"></button><button class="gplusButton"></button><button class="closeButton"></button></div>
+                <div class="gauge">
+                    <div class="GaugeGL"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="1500px" height="1500px" viewBox="0 0 1500 1500" enable-background="new 0 0 1500 1500" xml:space="preserve" class="GaugeSVG"><g id="gauge">	<g id="outer" class="outer">		<g id="squaresGraduations" class="squaresGraduations">			<path d="M208.285,471.403c-0.725,0.174-1.459-0.272-1.652-0.999l-8.918-36.02c-0.194-0.725,0.255-1.459,0.982-1.635l36.02-8.938    c0.725-0.175,1.459,0.259,1.635,0.984"></path>			<path d="M1289.022,1032.853c0.704-0.188,1.463,0.263,1.648,0.972l9.595,35.855c0.189,0.703-0.229,1.463-0.971,1.651    l-35.832,9.593c-0.729,0.188-1.488-0.23-1.675-0.971"></path>			<path d="M1197.632,1162.61c0.729,0.035,1.328,0.65,1.294,1.395l-1.699,37.066c-0.045,0.764-0.666,1.328-1.408,1.294    l-37.068-1.682c-0.764-0.033-1.327-0.683-1.296-1.413"></path>			<path d="M1075.162,1264.207c0.706,0.186,1.135,0.915,0.932,1.654l-9.709,35.824c-0.192,0.7-0.918,1.123-1.657,0.931l-35.82-9.716    c-0.705-0.188-1.155-0.916-0.938-1.656"></path>			<path d="M467.92,1291.077c0.179,0.724-0.267,1.461-0.993,1.64l-35.974,9.109c-0.731,0.182-1.467-0.248-1.646-0.991l-9.092-35.982    c-0.179-0.706,0.25-1.461,0.975-1.639"></path>			<path d="M421.571,239.118c-0.729-0.163-1.192-0.887-1.031-1.617l8.232-36.183c0.175-0.731,0.906-1.193,1.634-1.032l36.183,8.232    c0.729,0.162,1.177,0.887,1.013,1.617"></path>			<path d="M721.347,142.638c-0.533-0.532-0.534-1.388,0-1.921l26.221-26.247c0.521-0.529,1.387-0.53,1.908-0.003l26.259,26.215    c0.517,0.535,0.518,1.39,0.001,1.922"></path>			<path d="M879.992,155.579c-0.359-0.654-0.137-1.477,0.535-1.855l32.282-18.277c0.649-0.375,1.476-0.136,1.837,0.499    l18.303,32.301c0.365,0.654,0.145,1.477-0.526,1.855"></path>			<path d="M1030.09,209.68c-0.188-0.725,0.275-1.459,0.984-1.638l36.005-8.993c0.737-0.177,1.459,0.253,1.636,0.978l9.012,36.005    c0.177,0.725-0.254,1.46-0.997,1.655"></path>			<path d="M1159.564,301.103c0.002-0.745,0.596-1.354,1.358-1.352l37.085,0.062c0.763,0.002,1.354,0.611,1.352,1.358l-0.063,37.119    c-0.002,0.746-0.595,1.354-1.357,1.353"></path>			<path d="M1261.939,422.498c0.199-0.726,0.928-1.176,1.67-1l36.037,8.86c0.709,0.175,1.145,0.908,0.969,1.633l-8.844,36.039    c-0.174,0.725-0.926,1.177-1.634,1.001"></path>			<path d="M1329.052,566.865c0.379-0.651,1.184-0.878,1.855-0.518l32.306,18.25c0.651,0.363,0.894,1.187,0.501,1.839    l-18.238,32.324c-0.359,0.653-1.199,0.875-1.834,0.511"></path>			<path d="M1358.441,723.956c0.52-0.514,1.392-0.505,1.902,0.022l25.952,26.549c0.51,0.521,0.5,1.392-0.021,1.904l-26.533,25.95    c-0.554,0.51-1.393,0.5-1.927-0.021"></path>			<path d="M1343.372,884.013c0.653-0.365,1.472-0.154,1.843,0.499l18.79,32.019c0.369,0.631,0.158,1.475-0.472,1.846    l-32.041,18.754c-0.634,0.402-1.465,0.183-1.848-0.474"></path>			<path d="M141.292,778.373c-0.516,0.518-1.386,0.518-1.904,0l-26.242-26.245c-0.534-0.522-0.534-1.387,0-1.915l26.242-26.25    c0.519-0.52,1.389-0.52,1.904,0"></path>			<path display="none" fill="none" stroke="#FF0000" stroke-miterlimit="10" d="M1359.5,750c0,336.622-272.878,609.5-609.5,609.5    S140.5,1086.622,140.5,750S413.378,140.5,750,140.5S1359.5,413.378,1359.5,750z"></path>		</g>		<g id="ringOuter">			<path id="roundCenterGrey_1_" fill="#232323" d="M750.761,130.572c342.42,0,620.016,277.595,620.016,620.012    c0,342.425-277.596,619.979-620.016,619.979c-342.42,0-619.984-277.555-619.984-619.979    C130.777,408.167,408.341,130.572,750.761,130.572z"></path>			<path id="zoneTXT" fill="#ECECED" d="M732.538,842.723l4.155-0.19l60.894-2.892l261.667,447.97c0,0-132.361,79.49-316.386,80.487    c-184.008,0.995-296.538-86.802-296.538-86.802l251.507-441.12L732.538,842.723z"></path>		</g>		<g id="lines">			<g id="l1G">									<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="749.022" y1="750.769" x2="1049.022" y2="1270.382"></line>									<line display="none" fill="none" stroke="#A0A0A0" stroke-width="2" stroke-miterlimit="10" x1="750.755" y1="749.766" x2="1050.754" y2="1269.382"></line>			</g>			<g id="l500">									<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="749.388" y1="750.817" x2="1173.652" y2="1175.079"></line>									<line fill="none" stroke="#686868" stroke-width="2" stroke-miterlimit="10" x1="750.802" y1="749.4" x2="1175.066" y2="1173.665"></line>			</g>			<g id="l100">									<line fill="none" stroke="#686868" stroke-width="2" stroke-miterlimit="10" x1="749.573" y1="750.733" x2="1269.188" y2="1050.733"></line>									<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="750.573" y1="749" x2="1270.188" y2="1048.999"></line>			</g>			<g id="l90">									<line fill="none" stroke="#686868" stroke-width="2" stroke-miterlimit="10" x1="749.821" y1="750.932" x2="1329.377" y2="906.224"></line>									<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="750.339" y1="749" x2="1329.894" y2="904.291"></line>			</g>			<g id="l80">				  <line fill="none" stroke="#686868" stroke-width="2" stroke-miterlimit="10" x1="750" y1="750.999" x2="1350" y2="751"></line>				  <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="750" y1="749" x2="1350" y2="748.999"></line>			</g>			<g id="l70">									<line fill="none" stroke="#686868" stroke-width="2" stroke-miterlimit="10" x1="750.218" y1="751" x2="1329.774" y2="595.708"></line>									<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="749.7" y1="749.068" x2="1329.257" y2="593.777"></line>			</g>			<g id="l60">									<line fill="none" stroke="#686868" stroke-width="2" stroke-miterlimit="10" x1="750.501" y1="750.7" x2="1270.115" y2="450.7"></line>									<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="749.5" y1="748.968" x2="1269.115" y2="448.968"></line>			</g>			<g id="l50">									<line fill="none" stroke="#686868" stroke-width="2" stroke-miterlimit="10" x1="750.842" y1="750.6" x2="1175.105" y2="326.336"></line>									<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="749.427" y1="749.186" x2="1173.69" y2="324.922"></line>			</g>			<g id="l40">									<line fill="none" stroke="#686868" stroke-width="2" stroke-miterlimit="10" x1="750.9" y1="750.359" x2="1050.9" y2="230.744"></line>									<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="749.168" y1="749.359" x2="1049.168" y2="229.744"></line>			</g>			<g id="l30">									<line fill="none" stroke="#686868" stroke-width="2" stroke-miterlimit="10" x1="750.966" y1="750.259" x2="906.258" y2="170.703"></line>									<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="749.034" y1="749.741" x2="904.325" y2="170.186"></line>			</g>			<g id="l20">				<line fill="none" stroke="#686868" stroke-width="2" stroke-miterlimit="10" x1="751" y1="750" x2="751" y2="150"></line>				<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="749" y1="750" x2="749" y2="150"></line>			</g>			<g id="l15">									<line fill="none" stroke="#686868" stroke-width="2" stroke-miterlimit="10" x1="750.866" y1="749.5" x2="450.866" y2="229.885"></line>									<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="749.134" y1="750.5" x2="449.134" y2="230.885"></line>			</g>			<g id="l10">									<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="750.366" y1="749.268" x2="230.751" y2="449.268"></line>				  <line fill="none" stroke="#686868" stroke-width="2" stroke-miterlimit="10" x1="749.365" y1="751" x2="229.75" y2="451"></line>			</g>			<g id="l5">				  <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="750" y1="749" x2="150" y2="749"></line>				  <line fill="none" stroke="#686868" stroke-width="2" stroke-miterlimit="10" x1="750" y1="751" x2="150" y2="751"></line>			</g>			<g id="l0">									<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="749.134" y1="749.5" x2="449.134" y2="1269.115"></line>									<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="750.866" y1="750.5" x2="450.866" y2="1270.115"></line>			</g>		</g>					<linearGradient id="circleIronOuter_1_" gradientUnits="userSpaceOnUse" x1="1820.3826" y1="-291.0876" x2="810.9553" y2="442.304" gradientTransform="matrix(0.9998 -0.019 0.019 0.9998 -566.0693 699.9782)">			<stop offset="0" style="stop-color:#70706F"></stop>			<stop offset="0.1157" style="stop-color:#C1BFBE"></stop>			<stop offset="0.1674" style="stop-color:#F4F4F4"></stop>			<stop offset="0.1936" style="stop-color:#EFEFEE"></stop>			<stop offset="0.2209" style="stop-color:#E1E0DF"></stop>			<stop offset="0.2485" style="stop-color:#CCCAC9"></stop>			<stop offset="0.2765" style="stop-color:#B1B0AF"></stop>			<stop offset="0.3044" style="stop-color:#929290"></stop>			<stop offset="0.3138" style="stop-color:#878786"></stop>			<stop offset="1" style="stop-color:#FFFFFF"></stop>		</linearGradient>		<path id="circleIronOuter" fill="url(#circleIronOuter_1_)" stroke="#838383" stroke-miterlimit="10" d="M762.631,1374.212   c-84.194,1.592-166.18-13.354-243.699-44.4c-74.862-30.017-142.404-73.697-200.762-129.899   c-58.358-56.167-104.598-122.012-137.413-195.67c-33.986-76.275-52.028-157.637-53.623-241.834   c-1.595-84.167,13.335-166.163,44.403-243.665c29.996-74.863,73.695-142.405,129.877-200.761   c56.186-58.361,122.027-104.596,195.69-137.412c76.276-33.986,157.635-52.028,241.816-53.641   c84.178-1.595,166.164,13.354,243.683,44.404c74.864,30.014,142.4,73.711,200.768,129.877   c58.355,56.183,104.593,122.025,137.416,195.688c33.978,76.281,52.019,157.636,53.615,241.827   c1.593,84.184-13.346,166.171-44.406,243.69c-29.994,74.861-73.695,142.388-129.865,200.745   c-56.195,58.359-122.021,104.613-195.684,137.411C928.171,1354.573,846.797,1372.618,762.631,1374.212z M739.44,154.026   c-328.936,6.255-591.457,278.944-585.208,607.881c6.248,328.934,278.945,591.459,607.864,585.193   c328.938-6.231,591.46-278.91,585.219-607.865C1341.055,410.315,1068.379,147.781,739.44,154.026z"></path>		<g id="numbers">			<g>				<path fill="#232323" d="M389.269,1344.869c0-7.656,0.187-13.415,0.53-17.306c0.362-3.854,0.954-6.794,1.782-8.737     c1.374-3.465,3.129-5.997,5.286-7.574c2.166-1.568,4.939-2.348,8.32-2.348c3.391,0,6.147,0.779,8.271,2.348     c2.124,1.575,3.898,4.107,5.305,7.574c0.796,2.027,1.374,4.971,1.719,8.81c0.361,3.875,0.532,9.608,0.532,17.233     c0,7.561-0.17,13.272-0.532,17.13c-0.344,3.859-0.921,6.788-1.719,8.802c-1.406,3.485-3.181,6.011-5.305,7.555     c-2.125,1.545-4.882,2.32-8.271,2.32c-3.383,0-6.155-0.775-8.32-2.32c-2.157-1.544-3.913-4.069-5.286-7.555     c-0.829-1.951-1.422-4.856-1.782-8.732C389.456,1358.196,389.269,1352.461,389.269,1344.869z M398.439,1344.777     c0,11.562,0.477,19.052,1.462,22.504c0.967,3.425,2.742,5.161,5.287,5.161c2.532,0,4.28-1.695,5.258-5.044     c0.966-3.352,1.461-10.906,1.461-22.621c0-11.782-0.495-19.325-1.461-22.702c-0.979-3.34-2.727-5.014-5.258-5.014     c-2.545,0-4.32,1.712-5.287,5.133C398.915,1325.643,398.439,1333.153,398.439,1344.777z"></path>			</g>			<g>				<g>					<path fill="#232323" d="M377.425,182.729v-61.573h-8.669v-8.434h17.405v70.007H377.425L377.425,182.729z"></path>				</g>				<g>					<path fill="#232323" d="M400.259,171.931c1.499,1.094,3.032,1.899,4.562,2.429c1.532,0.524,3.091,0.789,4.704,0.789      c4.154,0,7.263-1.431,9.341-4.289c2.076-2.859,3.121-7.132,3.121-12.79c0-4.279-1.074-7.479-3.213-9.638      c-2.143-2.14-5.329-3.204-9.548-3.204c-1.655,0-3.107,0.078-4.358,0.234c-1.251,0.156-2.455,0.407-3.593,0.719l4.591-33.466      h24.463v8.625h-17.071l-2.733,17.076c0.92-0.156,1.773-0.27,2.522-0.365c0.75-0.081,1.417-0.119,1.983-0.119      c4.757,0,8.601,1.875,11.506,5.609c2.905,3.751,4.357,8.719,4.357,14.919c0,7.889-1.756,14.053-5.288,18.478      c-3.528,4.436-8.459,6.645-14.804,6.645c-2.295,0-4.506-0.265-6.631-0.812c-2.125-0.544-4.209-1.374-6.259-2.499      L400.259,171.931z"></path>				</g>			</g>			<g>				<path fill="#232323" d="M57.345,774.871c1.517,1.096,3.033,1.914,4.563,2.429c1.53,0.513,3.09,0.805,4.703,0.805     c4.154,0,7.263-1.43,9.342-4.29c2.076-2.875,3.125-7.15,3.125-12.805c0-4.281-1.079-7.483-3.221-9.636     c-2.141-2.126-5.326-3.205-9.546-3.205c-1.655,0-3.107,0.078-4.358,0.231c-1.249,0.166-2.452,0.415-3.593,0.737l4.593-33.483     H87.42v8.641H70.344l-2.734,17.06c0.939-0.157,1.775-0.274,2.523-0.354c0.75-0.077,1.414-0.116,1.992-0.116     c4.764,0,8.592,1.857,11.497,5.61c2.906,3.734,4.376,8.698,4.376,14.92c0,7.87-1.774,14.054-5.305,18.473     c-3.53,4.421-8.458,6.649-14.786,6.649c-2.313,0-4.525-0.284-6.648-0.829c-2.125-0.53-4.21-1.374-6.259-2.502L57.345,774.871z"></path>			</g>			<g>				<path fill="#232323" d="M121.347,439v-61.572h-8.687v-8.436h17.403V439H121.347z"></path>				<path fill="#232323" d="M146.611,404.05c0-7.638,0.17-13.413,0.53-17.286c0.343-3.891,0.936-6.804,1.763-8.757     c1.376-3.482,3.15-6.014,5.305-7.578c2.156-1.561,4.931-2.343,8.32-2.343c3.39,0,6.147,0.782,8.274,2.343     c2.125,1.563,3.88,4.095,5.287,7.578c0.813,2.018,1.374,4.953,1.734,8.827c0.343,3.857,0.534,9.609,0.534,17.216     c0,7.568-0.191,13.288-0.534,17.131c-0.36,3.86-0.919,6.789-1.734,8.804c-1.407,3.483-3.162,6.007-5.287,7.555     c-2.126,1.545-4.884,2.318-8.274,2.318c-3.39,0-6.163-0.771-8.32-2.318c-2.155-1.551-3.929-4.071-5.305-7.555     c-0.828-1.953-1.421-4.859-1.763-8.736C146.781,417.393,146.611,411.656,146.611,404.05z M155.764,403.941     c0,11.576,0.493,19.083,1.461,22.52c0.985,3.44,2.741,5.147,5.304,5.147c2.514,0,4.272-1.671,5.241-5.03     c0.985-3.359,1.476-10.906,1.476-22.637c0-11.759-0.491-19.312-1.476-22.669c-0.968-3.359-2.728-5.044-5.241-5.044     c-2.563,0-4.319,1.724-5.304,5.16C156.257,384.826,155.764,392.349,155.764,403.941z"></path>			</g>			<g>				<path fill="#232323" d="M1049.811,1398.561v-61.568h-8.67v-8.435h17.423v70.003H1049.811L1049.811,1398.561z"></path>				<path fill="#232323" d="M1116.366,1360.958c0.094,1.481,0.163,2.909,0.212,4.335c0.049,1.389,0.074,2.75,0.074,4.01     c0,10.279-1.668,17.848-4.997,22.771c-3.358,4.89-8.475,7.35-15.409,7.35c-7.155,0-12.342-2.782-15.533-8.344     c-3.217-5.56-4.81-14.716-4.81-27.48c0-12.902,1.599-22.136,4.831-27.668c3.208-5.53,8.481-8.297,15.791-8.297     c5.188,0,9.357,1.226,12.513,3.682c3.155,2.452,5.345,6.142,6.533,11.098l-8.347,4.032c-0.687-3.424-1.907-5.953-3.656-7.643     c-1.749-1.652-4.077-2.467-6.951-2.467c-4.093,0-6.978,1.943-8.646,5.866c-1.675,3.921-2.523,10.993-2.523,21.209     c0,10.136,0.849,17.175,2.523,21.137c1.67,3.968,4.553,5.972,8.646,5.972c3.659,0,6.399-1.516,8.227-4.531     c1.827-3,2.756-7.484,2.756-13.451c0-0.905-0.008-1.568-0.021-2.057c-0.018-0.451-0.039-0.87-0.07-1.275h-10.011v-8.247     H1116.366L1116.366,1360.958z"></path>				<path fill="#232323" d="M1125.107,1398.561v-74.316h8.681v31.89c1.157-1.845,2.491-3.212,4.008-4.079     c1.514-0.878,3.272-1.298,5.304-1.298c4.094,0,7.164,1.962,9.115,5.912c1.986,3.954,2.945,10.097,2.945,18.444     c0,8.309-0.959,14.442-2.945,18.398c-1.951,3.953-5.02,5.909-9.115,5.909c-2.001,0-3.742-0.428-5.257-1.32     c-1.514-0.884-2.866-2.243-4.055-4.15v4.606L1125.107,1398.561L1125.107,1398.561z M1133.455,1375.115     c0,6.014,0.497,10.226,1.515,12.645c0.981,2.395,2.68,3.6,4.99,3.6c2.344,0,4-1.205,5.001-3.6c1-2.422,1.484-6.631,1.484-12.645     c0-6.048-0.484-10.274-1.484-12.688c-1.001-2.396-2.657-3.607-5.001-3.607c-2.309,0-4.007,1.213-4.99,3.607     C1133.952,1364.843,1133.455,1369.07,1133.455,1375.115z"></path>			</g>			<g>				<path fill="#232323" d="M1205.184,1285.462c1.502,1.095,3.015,1.881,4.581,2.428c1.528,0.516,3.089,0.771,4.687,0.771     c4.154,0,7.263-1.431,9.357-4.287c2.06-2.858,3.108-7.117,3.108-12.773c0-4.278-1.08-7.483-3.203-9.64     c-2.157-2.12-5.325-3.201-9.546-3.201c-1.661,0-3.138,0.075-4.358,0.231c-1.253,0.158-2.455,0.394-3.612,0.721l4.592-33.482     h24.47v8.658h-17.061l-2.734,17.058c0.904-0.156,1.76-0.271,2.51-0.354c0.747-0.074,1.396-0.111,1.99-0.111     c4.748,0,8.591,1.854,11.499,5.607c2.902,3.714,4.358,8.701,4.358,14.885c0,7.906-1.76,14.057-5.301,18.508     c-3.518,4.421-8.465,6.615-14.775,6.615c-2.313,0-4.512-0.267-6.649-0.796c-2.106-0.562-4.211-1.374-6.255-2.501     L1205.184,1285.462z"></path>				<path fill="#232323" d="M1242.98,1261.304c0-7.653,0.188-13.408,0.532-17.299c0.342-3.891,0.937-6.806,1.762-8.741     c1.376-3.499,3.138-5.996,5.306-7.596c2.143-1.558,4.918-2.325,8.318-2.325c3.377,0,6.133,0.768,8.274,2.325     c2.104,1.598,3.898,4.095,5.305,7.596c0.776,2.002,1.374,4.945,1.717,8.809c0.342,3.878,0.514,9.609,0.514,17.231     c0,7.563-0.172,13.275-0.514,17.134c-0.343,3.863-0.938,6.791-1.717,8.787c-1.406,3.502-3.2,6.025-5.305,7.573     c-2.142,1.545-4.9,2.302-8.274,2.302c-3.402,0-6.176-0.757-8.318-2.302c-2.168-1.55-3.93-4.071-5.306-7.573     c-0.827-1.934-1.422-4.84-1.762-8.717C1243.168,1274.633,1242.98,1268.899,1242.98,1261.304z M1252.135,1261.194     c0,11.583,0.474,19.07,1.461,22.527c0.983,3.419,2.739,5.125,5.303,5.125c2.531,0,4.272-1.671,5.258-5.008     c0.962-3.377,1.462-10.907,1.462-22.645c0-11.76-0.5-19.306-1.462-22.683c-0.985-3.339-2.727-5.024-5.258-5.024     c-2.563,0-4.319,1.725-5.303,5.144C1252.607,1242.085,1252.135,1249.59,1252.135,1261.194z"></path>				<path fill="#232323" d="M1280.773,1261.304c0-7.653,0.171-13.408,0.515-17.299s0.954-6.806,1.764-8.741     c1.376-3.499,3.157-5.996,5.306-7.596c2.172-1.558,4.946-2.325,8.319-2.325c3.397,0,6.151,0.768,8.271,2.325     c2.141,1.598,3.898,4.095,5.304,7.596c0.784,2.002,1.375,4.945,1.718,8.809c0.352,3.878,0.551,9.609,0.551,17.231     c0,7.563-0.199,13.275-0.551,17.134c-0.343,3.863-0.932,6.791-1.718,8.787c-1.405,3.502-3.163,6.025-5.304,7.573     c-2.119,1.545-4.875,2.302-8.271,2.302c-3.375,0-6.148-0.757-8.319-2.302c-2.148-1.55-3.93-4.071-5.306-7.573     c-0.812-1.934-1.422-4.84-1.764-8.717C1280.943,1274.633,1280.773,1268.899,1280.773,1261.304z M1289.909,1261.194     c0,11.583,0.513,19.07,1.464,22.527c0.983,3.419,2.74,5.125,5.304,5.125c2.532,0,4.271-1.671,5.258-5.008     c0.979-3.377,1.462-10.907,1.462-22.645c0-11.76-0.482-19.306-1.462-22.683c-0.987-3.339-2.728-5.024-5.258-5.024     c-2.563,0-4.32,1.725-5.304,5.144C1290.422,1242.085,1289.909,1249.59,1289.909,1261.194z"></path>			</g>			<g>				<path fill="#232323" d="M1332.795,1148.326v-61.555h-8.67v-8.436h17.387v69.99H1332.795z"></path>				<path fill="#232323" d="M1358.058,1113.379c0-7.632,0.176-13.412,0.55-17.271c0.343-3.89,0.927-6.805,1.762-8.774     c1.376-3.464,3.133-5.995,5.306-7.56c2.142-1.563,4.915-2.36,8.319-2.36c3.371,0,6.13,0.799,8.272,2.36     c2.106,1.563,3.885,4.094,5.305,7.56c0.777,2.033,1.363,4.972,1.719,8.846c0.342,3.841,0.513,9.605,0.513,17.201     c0,7.593-0.171,13.302-0.513,17.13c-0.355,3.859-0.939,6.789-1.719,8.818c-1.42,3.468-3.198,5.993-5.305,7.54     c-2.143,1.547-4.901,2.335-8.272,2.335c-3.404,0-6.18-0.788-8.319-2.335c-2.173-1.547-3.93-4.072-5.306-7.54     c-0.837-1.969-1.421-4.875-1.762-8.746C1358.234,1126.738,1358.058,1121.004,1358.058,1113.379z M1367.23,1113.281     c0,11.562,0.475,19.086,1.462,22.505c0.984,3.457,2.741,5.163,5.304,5.163c2.529,0,4.272-1.671,5.258-5.046     c0.949-3.339,1.457-10.905,1.457-22.621c0-11.747-0.508-19.327-1.457-22.665c-0.985-3.379-2.729-5.05-5.258-5.05     c-2.563,0-4.319,1.711-5.304,5.165C1367.703,1094.153,1367.23,1101.696,1367.23,1113.281z"></path>				<path fill="#232323" d="M1395.869,1113.379c0-7.632,0.172-13.412,0.515-17.271c0.345-3.89,0.948-6.805,1.764-8.774     c1.375-3.464,3.151-5.995,5.306-7.56c2.162-1.563,4.936-2.36,8.318-2.36c3.387,0,6.145,0.799,8.272,2.36     c2.118,1.563,3.897,4.094,5.304,7.56c0.781,2.033,1.375,4.972,1.719,8.846c0.343,3.841,0.514,9.605,0.514,17.201     c0,7.593-0.171,13.302-0.514,17.13c-0.344,3.859-0.936,6.789-1.719,8.818c-1.406,3.468-3.186,5.993-5.304,7.54     c-2.128,1.547-4.888,2.335-8.272,2.335s-6.156-0.788-8.318-2.335c-2.154-1.547-3.931-4.072-5.306-7.54     c-0.817-1.969-1.421-4.875-1.764-8.746C1396.042,1126.738,1395.869,1121.004,1395.869,1113.379z M1405.006,1113.281     c0,11.562,0.488,19.086,1.464,22.505c0.982,3.457,2.74,5.163,5.303,5.163c2.532,0,4.271-1.671,5.258-5.046     c0.974-3.339,1.462-10.905,1.462-22.621c0-11.747-0.488-19.327-1.462-22.665c-0.986-3.379-2.726-5.05-5.258-5.05     c-2.563,0-4.32,1.711-5.303,5.165C1405.494,1094.153,1405.006,1101.696,1405.006,1113.281z"></path>			</g>			<g>				<path fill="#232323" d="M1406.418,936.456c-1.221,1.218-2.473,2.091-3.771,2.688c-1.27,0.561-2.684,0.841-4.184,0.841     c-4.639,0-7.972-1.648-10.051-4.941c-2.046-3.332-3.085-8.806-3.085-16.432c0-7.874,1.271-13.671,3.82-17.421     c2.534-3.717,6.479-5.609,11.847-5.609c5.22,0,9.119,1.996,11.697,5.933c2.574,3.933,3.836,9.91,3.836,17.845     c0,6.347-1.048,12.891-3.204,19.612c-2.132,6.744-6.294,15.966-12.515,27.616h-10.2c4.435-7.81,7.773-13.905,10.037-18.217     C1402.908,944.062,1404.823,940.076,1406.418,936.456z M1407.993,918.069c0-4.846-0.565-8.418-1.739-10.65     c-1.173-2.265-3.006-3.398-5.537-3.398c-2.406,0-4.141,1.116-5.236,3.352c-1.08,2.202-1.625,5.822-1.625,10.807     c0,5.169,0.533,8.801,1.602,10.849c1.078,2.079,2.881,3.118,5.443,3.118c2.505,0,4.297-1.114,5.424-3.353     C1407.449,926.588,1407.993,923.002,1407.993,918.069z"></path>				<path fill="#232323" d="M1422.868,931.643c0-7.624,0.172-13.381,0.521-17.27c0.372-3.892,0.95-6.807,1.793-8.776     c1.374-3.464,3.132-5.995,5.272-7.559c2.171-1.562,4.945-2.362,8.32-2.362c3.402,0,6.161,0.801,8.268,2.362     c2.141,1.562,3.899,4.093,5.306,7.559c0.813,2.034,1.375,4.971,1.741,8.845c0.354,3.875,0.526,9.61,0.526,17.201     c0,7.595-0.172,13.305-0.526,17.164c-0.366,3.826-0.927,6.755-1.741,8.785c-1.406,3.466-3.165,5.992-5.306,7.538     c-2.106,1.547-4.866,2.336-8.268,2.336c-3.377,0-6.149-0.789-8.32-2.336c-2.141-1.548-3.898-4.071-5.272-7.538     c-0.845-1.965-1.423-4.874-1.793-8.716C1423.04,945.001,1422.868,939.269,1422.868,931.643z M1432.041,931.548     c0,11.574,0.477,19.084,1.46,22.502c0.952,3.458,2.739,5.165,5.274,5.165c2.529,0,4.303-1.672,5.256-5.04     c0.983-3.348,1.459-10.88,1.459-22.627c0-11.748-0.476-19.326-1.459-22.667c-0.953-3.378-2.727-5.048-5.256-5.048     c-2.535,0-4.322,1.709-5.274,5.163C1432.517,912.417,1432.041,919.957,1432.041,931.548z"></path>			</g>			<g>				<path fill="#232323" d="M1430.192,747.777c3.071,1.085,5.249,2.904,6.531,5.467c1.28,2.556,1.904,6.628,1.904,12.233     c0,3.933-0.157,6.85-0.471,8.741c-0.312,1.855-0.851,3.491-1.576,4.898c-1.312,2.437-3.104,4.287-5.4,5.58     c-2.295,1.3-4.913,1.966-7.896,1.966c-2.31,0-4.458-0.414-6.379-1.226c-1.956-0.832-3.603-2.026-4.979-3.585     c-1.435-1.596-2.46-3.474-3.038-5.682c-0.597-2.169-0.898-5.753-0.898-10.691c0-5.561,0.666-9.633,1.964-12.208     c1.294-2.578,3.475-4.407,6.568-5.491c-2.875-1.28-4.873-3.044-6.03-5.281c-1.157-2.235-1.717-5.798-1.717-10.692     c0-5.887,1.171-10.174,3.484-12.878c2.338-2.704,6.026-4.055,11.025-4.055c5.097,0,8.813,1.359,11.128,4.08     c2.343,2.716,3.514,7,3.514,12.854c0,4.895-0.582,8.457-1.729,10.692C1435.052,744.732,1433.037,746.497,1430.192,747.777z      M1416.928,764.882c0,5.158,0.469,8.681,1.438,10.635c0.938,1.919,2.607,2.896,4.917,2.896c2.344,0,3.985-0.931,4.954-2.758     c0.967-1.829,1.437-5.147,1.437-9.896c0-5.156-0.47-8.706-1.437-10.679c-0.973-1.954-2.61-2.943-4.954-2.943     c-2.248,0-3.894,0.989-4.872,2.943C1417.413,757.051,1416.928,760.323,1416.928,764.882z M1423.286,744.165     c2.157,0,3.687-0.824,4.622-2.483c0.908-1.671,1.395-4.482,1.395-8.437c0-3.873-0.486-6.621-1.395-8.25     c-0.936-1.639-2.465-2.452-4.622-2.452c-2.123,0-3.637,0.773-4.544,2.333c-0.902,1.553-1.345,4.34-1.345,8.371     c0,4.057,0.442,6.895,1.345,8.508C1419.649,743.363,1421.163,744.165,1423.286,744.165z"></path>				<path fill="#232323" d="M1445.252,750.837c0-7.639,0.172-13.395,0.543-17.286c0.351-3.877,0.928-6.806,1.771-8.75     c1.373-3.481,3.132-6.004,5.297-7.566c2.146-1.579,4.922-2.362,8.316-2.362c3.382,0,6.14,0.783,8.271,2.362     c2.116,1.56,3.878,4.084,5.28,7.566c0.813,2.016,1.376,4.963,1.753,8.819c0.344,3.876,0.516,9.612,0.516,17.219     c0,7.561-0.172,13.298-0.516,17.13c-0.377,3.86-0.938,6.788-1.753,8.822c-1.402,3.464-3.164,5.99-5.28,7.534     c-2.132,1.55-4.892,2.338-8.271,2.338c-3.396,0-6.17-0.788-8.316-2.338c-2.165-1.546-3.924-4.07-5.297-7.534     c-0.846-1.971-1.423-4.877-1.771-8.754C1445.424,764.198,1445.252,758.43,1445.252,750.837z M1454.427,750.745     c0,11.559,0.475,19.084,1.46,22.504c0.971,3.454,2.741,5.164,5.293,5.164c2.506,0,4.283-1.673,5.236-5.048     c0.982-3.342,1.475-10.906,1.475-22.62c0-11.764-0.492-19.327-1.475-22.686c-0.953-3.357-2.73-5.033-5.236-5.033     c-2.552,0-4.322,1.715-5.293,5.152C1454.901,731.613,1454.427,739.135,1454.427,750.745z"></path>			</g>			<g>				<path fill="#232323" d="M1384.568,606.502l20.795-61.668h-21.183v-8.343h33.371l-23.357,70.009L1384.568,606.502     L1384.568,606.502z"></path>				<path fill="#232323" d="M1421.629,571.553c0-7.64,0.173-13.413,0.529-17.287c0.364-3.891,0.94-6.804,1.785-8.758     c1.373-3.482,3.131-5.998,5.303-7.576c2.14-1.563,4.914-2.344,8.32-2.344c3.371,0,6.131,0.781,8.273,2.344     c2.104,1.577,3.862,4.093,5.271,7.576c0.812,2.015,1.373,4.96,1.741,8.828c0.354,3.869,0.525,9.607,0.525,17.217     c0,7.577-0.172,13.287-0.525,17.129c-0.368,3.86-0.928,6.79-1.741,8.804c-1.408,3.483-3.166,6.008-5.271,7.556     c-2.143,1.545-4.902,2.321-8.273,2.321c-3.406,0-6.181-0.775-8.32-2.321c-2.173-1.547-3.93-4.071-5.303-7.556     c-0.847-1.953-1.423-4.857-1.785-8.721C1421.802,584.895,1421.629,579.162,1421.629,571.553z M1430.802,571.457     c0,11.562,0.474,19.069,1.46,22.504c0.954,3.439,2.741,5.157,5.304,5.157c2.504,0,4.273-1.681,5.226-5.04     c0.984-3.354,1.46-10.894,1.46-22.622c0-11.762-0.476-19.326-1.46-22.685c-0.952-3.357-2.722-5.029-5.226-5.029     c-2.563,0-4.35,1.711-5.304,5.146C1431.274,552.328,1430.802,559.851,1430.802,571.457z"></path>			</g>			<g>				<path fill="#232323" d="M1333.447,392.273c1.176-1.218,2.41-2.11,3.722-2.688c1.31-0.579,2.704-0.876,4.17-0.876     c4.689,0,8.039,1.666,10.118,4.978c2.048,3.297,3.087,8.771,3.087,16.413c0,7.843-1.281,13.621-3.844,17.355     c-2.563,3.75-6.53,5.609-11.903,5.609c-5.22,0-9.136-1.943-11.714-5.865c-2.577-3.921-3.868-9.835-3.868-17.772     c0-6.358,1.088-12.927,3.26-19.725c2.14-6.796,6.285-15.989,12.434-27.599h10.307c-3.97,6.906-7.193,12.768-9.711,17.576     C1336.989,384.484,1334.984,388.678,1333.447,392.273z M1331.859,410.582c0,4.891,0.57,8.453,1.712,10.688     c1.13,2.25,2.944,3.359,5.44,3.359c2.407,0,4.207-1.11,5.301-3.359c1.121-2.234,1.701-5.828,1.701-10.779     c0-5.126-0.572-8.718-1.676-10.797c-1.079-2.078-2.95-3.108-5.539-3.108c-2.406,0-4.184,1.085-5.272,3.282     C1332.414,402.06,1331.859,405.631,1331.859,410.582z"></path>				<path fill="#232323" d="M1360.76,397.164c0-7.64,0.17-13.415,0.55-17.288c0.343-3.891,0.922-6.803,1.765-8.758     c1.374-3.481,3.131-6.016,5.305-7.577c2.139-1.562,4.912-2.344,8.317-2.344c3.374,0,6.129,0.782,8.273,2.344     c2.105,1.56,3.88,4.095,5.298,7.577c0.785,2.016,1.359,4.953,1.725,8.828c0.344,3.856,0.516,9.608,0.516,17.218     c0,7.577-0.172,13.286-0.516,17.128c-0.365,3.861-0.938,6.788-1.725,8.804c-1.418,3.484-3.192,6.007-5.298,7.554     c-2.145,1.548-4.901,2.32-8.273,2.32c-3.407,0-6.181-0.772-8.317-2.32c-2.174-1.547-3.931-4.07-5.305-7.554     c-0.845-1.952-1.424-4.858-1.765-8.735C1360.929,410.505,1360.76,404.773,1360.76,397.164z M1369.932,397.057     c0,11.572,0.475,19.08,1.46,22.517c0.98,3.439,2.742,5.147,5.305,5.147c2.531,0,4.271-1.673,5.26-5.031     c0.948-3.36,1.447-10.906,1.447-22.633c0-11.752-0.499-19.314-1.447-22.673c-0.988-3.358-2.729-5.03-5.26-5.03     c-2.563,0-4.324,1.712-5.305,5.146C1370.407,377.938,1369.932,385.461,1369.932,397.057z"></path>			</g>			<g>				<path fill="#232323" d="M1216.545,272.097c1.531,1.089,3.045,1.893,4.58,2.423c1.53,0.531,3.089,0.787,4.686,0.787     c4.153,0,7.264-1.428,9.359-4.287c2.06-2.86,3.106-7.116,3.106-12.773c0-4.296-1.079-7.5-3.202-9.639     c-2.157-2.139-5.326-3.218-9.546-3.218c-1.656,0-3.107,0.079-4.358,0.234c-1.25,0.171-2.456,0.407-3.611,0.72l4.596-33.468     h24.464v8.641h-17.061l-2.733,17.059c0.908-0.155,1.758-0.271,2.523-0.351c0.733-0.078,1.415-0.117,1.976-0.117     c4.759,0,8.593,1.858,11.499,5.611c2.92,3.73,4.365,8.701,4.365,14.902c0,7.889-1.766,14.053-5.278,18.489     c-3.547,4.422-8.468,6.633-14.805,6.633c-2.312,0-4.506-0.265-6.65-0.813c-2.104-0.546-4.208-1.374-6.238-2.49L1216.545,272.097     z"></path>				<path fill="#232323" d="M1254.355,247.938c0-7.64,0.173-13.414,0.517-17.288c0.343-3.89,0.953-6.804,1.762-8.757     c1.374-3.482,3.167-5.997,5.306-7.578c2.173-1.56,4.948-2.342,8.319-2.342c3.407,0,6.163,0.782,8.271,2.342     c2.136,1.581,3.899,4.095,5.306,7.578c0.797,2.016,1.375,4.954,1.719,8.829c0.344,3.859,0.525,9.608,0.525,17.216     c0,7.577-0.182,13.288-0.525,17.129c-0.344,3.86-0.922,6.79-1.719,8.804c-1.406,3.483-3.17,6.008-5.306,7.556     c-2.108,1.545-4.864,2.319-8.271,2.319c-3.371,0-6.146-0.773-8.319-2.319c-2.139-1.548-3.932-4.072-5.306-7.556     c-0.811-1.953-1.421-4.858-1.762-8.729C1254.528,261.281,1254.355,255.547,1254.355,247.938z M1263.494,247.844     c0,11.561,0.498,19.068,1.459,22.504c0.986,3.44,2.743,5.146,5.307,5.146c2.531,0,4.272-1.669,5.258-5.029     c0.984-3.357,1.46-10.906,1.46-22.622c0-11.763-0.476-19.326-1.46-22.686c-0.985-3.357-2.727-5.029-5.258-5.029     c-2.563,0-4.32,1.71-5.307,5.145C1263.992,228.714,1263.494,236.236,1263.494,247.844z"></path>			</g>			<g>				<path fill="#232323" d="M1075.377,182.421v-19.026h-18.951v-8.968l19.748-41.994h8.061v43.104h4.999v7.858h-4.999v19.026     H1075.377L1075.377,182.421z M1075.565,155.536V127.82l-12.56,27.716H1075.565z"></path>				<path fill="#232323" d="M1095.266,147.473c0-7.64,0.17-13.396,0.537-17.288c0.354-3.872,0.93-6.804,1.776-8.737     c1.374-3.489,3.131-6.016,5.291-7.579c2.149-1.577,4.925-2.361,8.318-2.361c3.387,0,6.142,0.783,8.262,2.361     c2.13,1.562,3.885,4.085,5.293,7.579c0.813,1.998,1.374,4.953,1.752,8.809c0.344,3.876,0.516,9.608,0.516,17.217     c0,7.577-0.172,13.287-0.516,17.147c-0.378,3.845-0.937,6.784-1.752,8.787c-1.408,3.485-3.163,6.009-5.293,7.554     c-2.12,1.564-4.877,2.338-8.262,2.338c-3.396,0-6.17-0.774-8.318-2.338c-2.16-1.546-3.917-4.069-5.291-7.554     c-0.849-1.933-1.426-4.857-1.776-8.717C1095.436,160.815,1095.266,155.081,1095.266,147.473z M1104.437,147.379     c0,11.578,0.476,19.066,1.46,22.504c0.962,3.438,2.743,5.163,5.292,5.163c2.512,0,4.288-1.688,5.235-5.035     c0.985-3.353,1.472-10.9,1.472-22.632c0-11.766-0.486-19.328-1.472-22.686c-0.947-3.36-2.724-5.031-5.235-5.031     c-2.549,0-4.33,1.711-5.292,5.147C1104.913,128.248,1104.437,135.771,1104.437,147.379z"></path>			</g>			<g>				<path fill="#232323" d="M889.573,94.953h8.25c0,0.205-0.016,0.478-0.047,0.852c-0.031,0.358-0.047,0.65-0.047,0.835     c0,2.969,0.605,5.209,1.858,6.742c1.248,1.514,3.075,2.272,5.513,2.272c2.563,0,4.427-0.97,5.634-2.874     c1.203-1.922,1.82-5.001,1.82-9.22c0-5.327-0.812-8.85-2.406-10.569c-1.595-1.701-4.704-2.57-9.265-2.57h-1.39v-7.608     c0.345,0,0.767,0.01,1.203,0.025c0.438,0.016,1.063,0.022,1.811,0.022c3.626,0,6.08-0.823,7.361-2.429     c1.263-1.608,1.905-5.022,1.905-10.242c0-3.481-0.477-6.045-1.462-7.718c-0.986-1.655-2.494-2.482-4.522-2.482     c-2.377,0-4.078,0.897-5.142,2.71c-1.061,1.797-1.638,4.898-1.763,9.273h-8.019c-0.03-0.33-0.055-0.687-0.068-1.111     c-0.018-0.404-0.023-1.015-0.023-1.811c0-5.593,1.211-9.779,3.6-12.561c2.423-2.78,6.07-4.172,10.912-4.172     c5.252,0,9.15,1.563,11.697,4.686c2.539,3.144,3.801,7.938,3.801,14.39c0,4.485-0.675,7.949-2.034,10.427     c-1.359,2.486-3.445,4.042-6.31,4.681c3.334,0.609,5.732,2.14,7.186,4.59c1.452,2.471,2.162,6.266,2.162,11.424     c0,7.546-1.384,13.028-4.147,16.452c-2.766,3.406-7.179,5.124-13.239,5.124c-4.97,0-8.688-1.445-11.124-4.335     c-2.471-2.89-3.707-7.272-3.707-13.116v-1.689H889.573z"></path>				<path fill="#232323" d="M928.321,78.269c0-7.64,0.171-13.395,0.515-17.286c0.375-3.875,0.953-6.789,1.785-8.74     c1.387-3.483,3.145-6.016,5.283-7.579c2.172-1.56,4.945-2.343,8.32-2.343c3.406,0,6.162,0.784,8.27,2.343     c2.141,1.562,3.896,4.095,5.305,7.579c0.813,2.015,1.374,4.953,1.72,8.826c0.379,3.858,0.55,9.591,0.55,17.2     c0,7.579-0.171,13.296-0.55,17.149c-0.346,3.86-0.904,6.787-1.72,8.802c-1.408,3.484-3.164,5.992-5.305,7.555     c-2.107,1.547-4.865,2.321-8.27,2.321c-3.377,0-6.15-0.773-8.32-2.321c-2.139-1.564-3.896-4.071-5.283-7.555     c-0.834-1.951-1.414-4.857-1.785-8.734C928.492,91.63,928.321,85.877,928.321,78.269z M937.472,78.175     c0,11.578,0.496,19.085,1.467,22.521c0.963,3.437,2.737,5.147,5.285,5.147c2.531,0,4.275-1.673,5.255-5.03     c0.985-3.36,1.464-10.905,1.464-22.639c0-11.764-0.479-19.327-1.464-22.668c-0.979-3.357-2.724-5.048-5.255-5.048     c-2.548,0-4.322,1.73-5.285,5.164C937.969,59.06,937.472,66.584,937.472,78.175z"></path>			</g>			<g>				<path fill="#232323" d="M712.637,89.912l18.652-37.104c1.625-3.295,2.852-6.305,3.664-9.038     c0.811-2.734,1.225-5.227,1.225-7.459c0-3.109-0.524-5.408-1.554-6.905c-1.047-1.5-2.648-2.248-4.819-2.248     c-2.407,0-4.11,0.983-5.142,2.965c-1.016,1.987-1.531,5.361-1.531,10.126v2.436h-8.809c-0.073-0.454-0.106-0.897-0.106-1.367     c0-0.47,0-1.197,0-2.179c0-6.687,1.341-11.71,4.026-15.085c2.689-3.375,6.702-5.053,12.039-5.053     c4.833,0,8.622,1.531,11.385,4.611c2.761,3.059,4.146,7.292,4.146,12.7c0,3.155-0.535,6.429-1.604,9.802     c-1.069,3.376-2.892,7.399-5.439,12.054l-12.513,22.824h18.163v8.922L712.637,89.912L712.637,89.912z"></path>				<path fill="#232323" d="M751.867,54.966c0-7.641,0.173-13.414,0.517-17.288c0.345-3.891,0.953-6.804,1.774-8.758     c1.365-3.481,3.154-5.998,5.293-7.577c2.173-1.561,4.948-2.342,8.317-2.342c3.409,0,6.165,0.782,8.274,2.342     c2.14,1.579,3.897,4.095,5.305,7.577c0.812,2.015,1.373,4.953,1.717,8.828c0.369,3.874,0.55,9.607,0.55,17.218     c0,7.576-0.181,13.286-0.55,17.128c-0.344,3.86-0.903,6.79-1.717,8.804c-1.407,3.482-3.165,6.008-5.305,7.552     c-2.109,1.547-4.867,2.321-8.274,2.321c-3.37,0-6.145-0.772-8.317-2.321c-2.139-1.545-3.928-4.07-5.293-7.552     c-0.823-1.953-1.432-4.859-1.774-8.719C752.04,68.306,751.867,62.573,751.867,54.966z M761.007,54.871     c0,11.56,0.509,19.067,1.472,22.503c0.974,3.439,2.731,5.166,5.291,5.166c2.533,0,4.273-1.69,5.26-5.049     c0.984-3.36,1.461-10.887,1.461-22.621c0-11.764-0.477-19.327-1.461-22.686c-0.986-3.358-2.727-5.029-5.26-5.029     c-2.56,0-4.317,1.709-5.291,5.145C761.514,35.74,761.007,43.263,761.007,54.871z"></path>			</g>		</g>		<g id="points">			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M1292.723,326.402c4.813,0,8.708,3.878,8.708,8.674    c0,4.797-3.895,8.691-8.708,8.691c-4.779,0-8.673-3.894-8.673-8.691C1284.051,330.28,1287.944,326.402,1292.723,326.402z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M1383.189,481.683c4.814,0,8.708,3.894,8.708,8.691    c0,4.796-3.894,8.674-8.708,8.674c-4.78,0-8.674-3.878-8.674-8.674C1374.515,485.577,1378.409,481.683,1383.189,481.683z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M1429.658,654.924c4.781,0,8.673,3.887,8.673,8.674    c0,4.796-3.892,8.691-8.673,8.691c-4.813,0-8.674-3.895-8.674-8.691C1420.984,658.811,1424.845,654.924,1429.658,654.924z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M1429.659,833.951c4.78,0,8.674,3.894,8.674,8.673    c0,4.806-3.894,8.673-8.674,8.673c-4.813,0-8.673-3.867-8.673-8.673C1420.986,837.845,1424.845,833.951,1429.659,833.951z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M1382.621,1007.966c4.801,0,8.674,3.896,8.674,8.675    c0,4.813-3.873,8.707-8.674,8.707c-4.789,0-8.672-3.894-8.672-8.707C1373.949,1011.862,1377.832,1007.966,1382.621,1007.966z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M1292.279,1163.441c4.779,0,8.674,3.894,8.674,8.674    c0,4.813-3.895,8.708-8.674,8.708c-4.785,0-8.673-3.896-8.673-8.708C1283.606,1167.334,1287.494,1163.441,1292.279,1163.441z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M1165.312,1289.273c4.78,0,8.674,3.894,8.674,8.673    s-3.894,8.673-8.674,8.673c-4.814,0-8.708-3.894-8.708-8.673S1160.498,1289.273,1165.312,1289.273z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M1166.164,199.419c4.814,0,8.674,3.876,8.674,8.673    c0,4.796-3.859,8.69-8.674,8.69c-4.779,0-8.674-3.894-8.674-8.69C1157.49,203.295,1161.385,199.419,1166.164,199.419z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M1010.46,109.482c4.8,0,8.673,3.894,8.673,8.69    c0,4.796-3.873,8.673-8.673,8.673c-4.779,0-8.673-3.877-8.673-8.673C1001.787,113.376,1005.68,109.482,1010.46,109.482z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M837.257,63.685c4.814,0,8.708,3.894,8.708,8.69    c0,4.797-3.894,8.673-8.708,8.673c-4.779,0-8.674-3.875-8.674-8.673C828.583,67.579,832.477,63.685,837.257,63.685z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M289.252,1250.444c4.797,0,8.691,3.893,8.691,8.673    c0,4.786-3.894,8.674-8.691,8.674s-8.674-3.888-8.674-8.674C280.578,1254.336,284.455,1250.444,289.252,1250.444z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M193.496,1143.988c4.794,0,8.688,3.895,8.688,8.675    c0,4.813-3.893,8.705-8.688,8.705c-4.781,0-8.676-3.893-8.676-8.705C184.82,1147.882,188.715,1143.988,193.496,1143.988z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M121.887,1020.742c4.796,0,8.69,3.894,8.69,8.709    c0,4.779-3.895,8.673-8.69,8.673c-4.797,0-8.673-3.894-8.673-8.673C113.215,1024.636,117.09,1020.742,121.887,1020.742z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M77.389,884.742c4.796,0,8.691,3.889,8.691,8.704    c0,4.778-3.895,8.673-8.691,8.673c-4.797,0-8.673-3.895-8.673-8.673C68.716,888.631,72.592,884.742,77.389,884.742z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M85.979,564.809c4.797,0,8.673,3.894,8.673,8.686    c0,4.794-3.876,8.678-8.673,8.678s-8.69-3.884-8.69-8.678C77.288,568.703,81.182,564.809,85.979,564.809z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M570.017,79.391c4.797,0,8.673,3.895,8.673,8.675    c0,4.796-3.876,8.69-8.673,8.69s-8.692-3.894-8.692-8.69C561.325,83.286,565.22,79.391,570.017,79.391z"></path>			<path fill="#B2B3B3" stroke="#70706F" stroke-miterlimit="10" d="M263.825,257.14c4.797,0,8.673,3.894,8.673,8.683    c0,4.787-3.876,8.682-8.673,8.682s-8.69-3.895-8.69-8.682C255.135,261.034,259.028,257.14,263.825,257.14z"></path>		</g>	</g>	<g id="inner" class="inner">					<linearGradient id="circleIronInt_1_" gradientUnits="userSpaceOnUse" x1="947.8083" y1="75.6125" x2="1683.5193" y2="75.6125" gradientTransform="matrix(0.9998 -0.019 0.019 0.9998 -566.0693 699.9782)">			<stop offset="0" style="stop-color:#70706F"></stop>			<stop offset="0.1157" style="stop-color:#C1BFBE"></stop>			<stop offset="0.1674" style="stop-color:#F4F4F4"></stop>			<stop offset="0.1936" style="stop-color:#EFEFEE"></stop>			<stop offset="0.2209" style="stop-color:#E1E0DF"></stop>			<stop offset="0.2485" style="stop-color:#CCCAC9"></stop>			<stop offset="0.2765" style="stop-color:#B1B0AF"></stop>			<stop offset="0.3044" style="stop-color:#929290"></stop>			<stop offset="0.3138" style="stop-color:#878786"></stop>			<stop offset="1" style="stop-color:#FFFFFF"></stop>		</linearGradient>		<path id="circleIronInt" fill="url(#circleIronInt_1_)" d="M750.641,1118.426c-48.904,0-96.428-9.48-141.267-28.176   c-43.348-18.08-82.407-43.958-116.101-76.982c-69.273-67.896-108.438-158.696-110.287-255.703   c-0.937-49.651,7.878-97.998,26.192-143.708c17.701-44.157,43.469-83.983,76.587-118.405   c33.134-34.402,71.961-61.678,115.414-81.022c44.976-20.042,92.951-30.694,142.602-31.633c2.369-0.043,4.755-0.065,7.118-0.065   c48.889,0,96.438,9.478,141.26,28.151c43.347,18.07,82.407,43.986,116.081,76.994c69.283,67.899,108.467,158.715,110.311,255.719   c0.939,49.649-7.879,97.971-26.192,143.688c-17.703,44.155-43.453,83.998-76.585,118.406   c-33.137,34.398-71.965,61.679-115.397,81.035c-45.006,20.029-92.971,30.682-142.622,31.635   C755.383,1118.405,753.008,1118.426,750.641,1118.426z M750.899,407.713c-2.192,0-4.434,0.021-6.642,0.061   C555.23,411.362,404.376,568.069,407.964,757.09c3.526,185.458,157.253,336.356,342.678,336.356c2.201,0,4.432-0.021,6.65-0.062   c189.017-3.607,339.854-160.314,336.281-349.329C1090.036,558.592,936.338,407.713,750.899,407.713z"></path>		<path id="roundCenterGrey" fill="#232323" stroke="#C6C6C5" stroke-width="5" stroke-miterlimit="10" d="M750.768,403.792   c191.522,0,346.787,155.264,346.787,346.786c0,191.525-155.265,346.767-346.787,346.767s-346.77-155.241-346.77-346.767   C403.999,559.056,559.246,403.792,750.768,403.792z"></path>					<linearGradient id="guideProgress_1_" gradientUnits="userSpaceOnUse" x1="988.5515" y1="75.6067" x2="1642.7791" y2="75.6067" gradientTransform="matrix(0.9998 -0.019 0.019 0.9998 -566.0693 699.9782)">			<stop offset="0" style="stop-color:#232323"></stop>			<stop offset="0.1674" style="stop-color:#3C3C3B"></stop>			<stop offset="0.2078" style="stop-color:#3A3A39"></stop>			<stop offset="0.2497" style="stop-color:#343433"></stop>			<stop offset="0.2921" style="stop-color:#2A2A2A"></stop>			<stop offset="0.3138" style="stop-color:#232323"></stop>			<stop offset="0.9205" style="stop-color:#3A3A39"></stop>			<stop offset="0.9422" style="stop-color:#373736"></stop>			<stop offset="0.9713" style="stop-color:#2F2F2E"></stop>			<stop offset="1" style="stop-color:#232323"></stop>		</linearGradient>					<path id="guideProgress" opacity="0.8" fill="url(#guideProgress_1_)" stroke="#898989" stroke-width="0.25" stroke-miterlimit="10" enable-background="new    " d="   M756.997,1077.61c-87.375,1.686-170.145-30.794-233.096-91.385c-62.932-60.595-98.522-142.09-100.179-229.446   c-1.65-87.345,30.792-170.117,91.403-233.066c60.593-62.953,142.069-98.527,229.438-100.179   c87.349-1.671,170.127,30.793,233.056,91.385c62.968,60.608,98.524,142.085,100.199,229.444   c1.666,87.346-30.811,170.135-91.39,233.066C925.822,1040.397,844.326,1075.954,756.997,1077.61z M745.022,447.818   c-166.954,3.163-300.188,141.565-297.015,308.51c3.18,166.937,141.573,300.175,308.508,297.014   c166.934-3.179,300.173-141.573,297.015-308.523C1050.371,577.881,911.955,444.638,745.022,447.818z"></path>	</g></g></svg>
+                        <canvas
+                            style="z-index: 2;" width="316" height="316"></canvas>
+                            <div class="gaugeProgress" style="color: rgb(0, 153, 255); visibility: hidden; font-size: 22.12px;">&nbsp;</div><button class="gaugeButton gaugeStartButton" style="font-size: 15.8px; visibility: visible;">Iniciar o teste</button><button class="gaugeButton gaugeRestartButton" style="color: rgb(0, 153, 255); border-bottom-left-radius: 63px; border-bottom-right-radius: 63px; font-size: 12.64px; padding-bottom: 47.4px; visibility: hidden;">Reiniciar<div style="color: rgb(0, 153, 255); font-size: 25.28px;"></div></button><button class="gaugeButton gaugeShareButton" style="border-top-left-radius: 63px; border-top-right-radius: 63px; font-size: 12.64px; padding-top: 6.952px; visibility: hidden;">Compartilhar<div style="font-size: 25.28px;"></div></button><button class="gaugeCompareButton" style="font-size: 12.64px; visibility: hidden;">Comparar<div style="font-size: 25.28px;"></div></button>
+                            <div class="gaugeHorizontalSplitterTesting" style="visibility: hidden;"></div>
+                            <div class="gaugeTestInfo" style="visibility: hidden;">
+                                <div class="gaugeTestInfoValue" style="font-size: 31.6px; visibility: hidden;">**</div>
+                                <div class="gaugeTestInfoUnit" style="font-size: 12.64px; visibility: hidden;">**</div>
+                                <div class="gaugeTestInfoText" style="font-size: 8.532px; visibility: hidden;">Armazenando dados…</div>
+                                <div class="gaugeTestInfoIcon iconDownload" style="color: rgb(0, 153, 255); font-size: 31.6px; visibility: hidden;"></div>
+                                <div class="gaugeTestInfoIcon iconUpload" style="color: rgb(0, 153, 255); font-size: 31.6px; visibility: hidden;"></div>
+                                <div class="gaugeTestInfoIcon iconLatency" style="color: rgb(0, 153, 255); font-size: 31.6px; visibility: hidden;"></div>
+                            </div>
+                    </div>
+                </div>
+                <div class="SpeedTestSelectServer" style="bottom: -371px; transition: bottom 500ms ease; visibility: hidden;">
+                    <div class="title">Selecão do servidor</div>
+                    <div class="text">Em modo automático, o melhor servidor para a sua conexão é automaticamente selecionado quando o teste começa. No entantom você pode selecionar um servidor manualmente</div>
+                    <div class="hostServer">Você é uma operadora ou anfitrião de servidor e deseja participar ativamente do projeto nPerf? </div><button class="hostServer">Hospede um servidor</button>
+                    <div class="poolAuto"><button data-poolid="0" data-ipv6="undefined" class="active">Seleção automática do servidor</button><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="108px" height="112px" viewBox="0 0 108 112" class="undefined">                <symbol id="basProxy" viewBox="-13.5 0 27 6">                <path class="secondary" fill-rule="evenodd" clip-rule="evenodd" fill="#94C13D" d="M-13.5,2.5c0,0.333,0.167,0.5,0.5,0.5h9.5V1.95H-13                C-13.333,1.95-13.5,2.133-13.5,2.5z M3.5,1.95V3h9.4c0.4,0,0.6-0.167,0.6-0.5c0-0.167-0.067-0.283-0.2-0.35                c-0.1-0.133-0.233-0.2-0.4-0.2H3.5z M1,4.5h0.85c0.467,0,0.7-0.217,0.7-0.65v-3.2C2.55,0.217,2.317,0,1.85,0h-3.6                c-0.467,0-0.7,0.217-0.7,0.65v3.2c0,0.433,0.233,0.65,0.7,0.65h0.85V6H1V4.5z"></path>                </symbol>                <symbol id="fondProxy" viewBox="0 -13 27 13">                <path class="primary" fill-rule="evenodd" clip-rule="evenodd" fill="#3C3C3B" d="M2-3l5,3h13l5-3H2z M4.45-5C4.15-5,4-5.167,4-5.5v-6.1                C4-11.867,4.15-12,4.45-12C4.817-12,5-11.867,5-11.6v6.1C5-5.167,4.817-5,4.45-5z M3-5.5C3-5.167,2.817-5,2.45-5                C2.15-5,2-5.167,2-5.5v-6.1C2-11.867,2.15-12,2.45-12C2.817-12,3-11.867,3-11.6V-5.5z M7-5.5C7-5.167,6.817-5,6.45-5                C6.15-5,6-5.167,6-5.5v-6.1C6-11.867,6.15-12,6.45-12C6.817-12,7-11.867,7-11.6V-5.5z M24.5-5.5c-0.3,0-0.55-0.1-0.75-0.3                c-0.167-0.233-0.25-0.483-0.25-0.75c0-0.267,0.083-0.483,0.25-0.65c0.233-0.2,0.483-0.3,0.75-0.3s0.5,0.1,0.7,0.3                c0.2,0.167,0.3,0.383,0.3,0.65C25.5-5.85,25.167-5.5,24.5-5.5z M26.8-5.35L27-5.9v-4.9c0-0.6-0.217-1.117-0.65-1.55                C25.883-12.783,25.333-13,24.7-13H2.3c-0.633,0-1.183,0.217-1.65,0.65C0.217-11.917,0-11.4,0-10.8v4.9l0.2,0.65                C0.567-4.483,1.2-4.067,2.1-4h22.6c0.466,0,0.9-0.117,1.3-0.35C26.4-4.617,26.667-4.95,26.8-5.35z"></path>                </symbol>                <symbol id="inProxy" viewBox="0 -7 23.5 7">                <path class="secondary" fill-rule="evenodd" clip-rule="evenodd" fill="#94C13D" d="M22.5-2.5c-0.267,0-0.517,0.1-0.75,0.3                c-0.167,0.167-0.25,0.383-0.25,0.65c0,0.267,0.083,0.517,0.25,0.75c0.2,0.2,0.45,0.3,0.75,0.3c0.667,0,1-0.35,1-1.05                c0-0.267-0.1-0.483-0.3-0.65C23-2.4,22.767-2.5,22.5-2.5z M1-0.5v-6.1C1-6.867,0.817-7,0.45-7C0.15-7,0-6.867,0-6.6v6.1                C0-0.167,0.15,0,0.45,0C0.817,0,1-0.167,1-0.5z M2.45,0C2.817,0,3-0.167,3-0.5v-6.1C3-6.867,2.817-7,2.45-7C2.15-7,2-6.867,2-6.6                v6.1C2-0.167,2.15,0,2.45,0z M5-0.5v-6.1C5-6.867,4.817-7,4.45-7C4.15-7,4-6.867,4-6.6v6.1C4-0.167,4.15,0,4.45,0                C4.817,0,5-0.167,5-0.5z"></path>                </symbol>                <use xlink:href="#inProxy" width="23.5" height="7" y="-7" transform="matrix(3.2166 0 0 -3.2166 16.7827 52.7505)" overflow="visible"></use>                <use xlink:href="#basProxy" width="27" height="6" x="-13.5" transform="matrix(3.2166 0 0 -3.2166 53.7744 101)" overflow="visible"></use>                <use xlink:href="#fondProxy" width="27" height="13" y="-13" transform="matrix(3.2166 0 0 -3.2166 10.3496 36.667)" overflow="visible"></use>                </svg></div>
+                    <div class="list"></div>
+                    <div class="filter">
+                        <div class="label">Filtro:</div><input></div>
+                    <div class="legend"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="108px" height="112px" viewBox="0 0 108 112" class="icon auto">                <symbol id="basProxy" viewBox="-13.5 0 27 6">                <path class="secondary" fill-rule="evenodd" clip-rule="evenodd" fill="#94C13D" d="M-13.5,2.5c0,0.333,0.167,0.5,0.5,0.5h9.5V1.95H-13                C-13.333,1.95-13.5,2.133-13.5,2.5z M3.5,1.95V3h9.4c0.4,0,0.6-0.167,0.6-0.5c0-0.167-0.067-0.283-0.2-0.35                c-0.1-0.133-0.233-0.2-0.4-0.2H3.5z M1,4.5h0.85c0.467,0,0.7-0.217,0.7-0.65v-3.2C2.55,0.217,2.317,0,1.85,0h-3.6                c-0.467,0-0.7,0.217-0.7,0.65v3.2c0,0.433,0.233,0.65,0.7,0.65h0.85V6H1V4.5z"></path>                </symbol>                <symbol id="fondProxy" viewBox="0 -13 27 13">                <path class="primary" fill-rule="evenodd" clip-rule="evenodd" fill="#3C3C3B" d="M2-3l5,3h13l5-3H2z M4.45-5C4.15-5,4-5.167,4-5.5v-6.1                C4-11.867,4.15-12,4.45-12C4.817-12,5-11.867,5-11.6v6.1C5-5.167,4.817-5,4.45-5z M3-5.5C3-5.167,2.817-5,2.45-5                C2.15-5,2-5.167,2-5.5v-6.1C2-11.867,2.15-12,2.45-12C2.817-12,3-11.867,3-11.6V-5.5z M7-5.5C7-5.167,6.817-5,6.45-5                C6.15-5,6-5.167,6-5.5v-6.1C6-11.867,6.15-12,6.45-12C6.817-12,7-11.867,7-11.6V-5.5z M24.5-5.5c-0.3,0-0.55-0.1-0.75-0.3                c-0.167-0.233-0.25-0.483-0.25-0.75c0-0.267,0.083-0.483,0.25-0.65c0.233-0.2,0.483-0.3,0.75-0.3s0.5,0.1,0.7,0.3                c0.2,0.167,0.3,0.383,0.3,0.65C25.5-5.85,25.167-5.5,24.5-5.5z M26.8-5.35L27-5.9v-4.9c0-0.6-0.217-1.117-0.65-1.55                C25.883-12.783,25.333-13,24.7-13H2.3c-0.633,0-1.183,0.217-1.65,0.65C0.217-11.917,0-11.4,0-10.8v4.9l0.2,0.65                C0.567-4.483,1.2-4.067,2.1-4h22.6c0.466,0,0.9-0.117,1.3-0.35C26.4-4.617,26.667-4.95,26.8-5.35z"></path>                </symbol>                <symbol id="inProxy" viewBox="0 -7 23.5 7">                <path class="secondary" fill-rule="evenodd" clip-rule="evenodd" fill="#94C13D" d="M22.5-2.5c-0.267,0-0.517,0.1-0.75,0.3                c-0.167,0.167-0.25,0.383-0.25,0.65c0,0.267,0.083,0.517,0.25,0.75c0.2,0.2,0.45,0.3,0.75,0.3c0.667,0,1-0.35,1-1.05                c0-0.267-0.1-0.483-0.3-0.65C23-2.4,22.767-2.5,22.5-2.5z M1-0.5v-6.1C1-6.867,0.817-7,0.45-7C0.15-7,0-6.867,0-6.6v6.1                C0-0.167,0.15,0,0.45,0C0.817,0,1-0.167,1-0.5z M2.45,0C2.817,0,3-0.167,3-0.5v-6.1C3-6.867,2.817-7,2.45-7C2.15-7,2-6.867,2-6.6                v6.1C2-0.167,2.15,0,2.45,0z M5-0.5v-6.1C5-6.867,4.817-7,4.45-7C4.15-7,4-6.867,4-6.6v6.1C4-0.167,4.15,0,4.45,0                C4.817,0,5-0.167,5-0.5z"></path>                </symbol>                <use xlink:href="#inProxy" width="23.5" height="7" y="-7" transform="matrix(3.2166 0 0 -3.2166 16.7827 52.7505)" overflow="visible"></use>                <use xlink:href="#basProxy" width="27" height="6" x="-13.5" transform="matrix(3.2166 0 0 -3.2166 53.7744 101)" overflow="visible"></use>                <use xlink:href="#fondProxy" width="27" height="13" y="-13" transform="matrix(3.2166 0 0 -3.2166 10.3496 36.667)" overflow="visible"></use>                </svg><img class="icon os" src="https://media.nperf.com/webplugin/dist/SpeedTest/2.1.2//assets/server_os.png"><img class="icon ios" src="https://media.nperf.com/webplugin/dist/SpeedTest/2.1.2//assets/server_ios.png"><img class="icon ps" src="https://media.nperf.com/webplugin/dist/SpeedTest/2.1.2//assets/server_ps.png"><img class="icon ips" src="https://media.nperf.com/webplugin/dist/SpeedTest/2.1.2//assets/server_ips.png"><img class="icon cs" src="https://media.nperf.com/webplugin/dist/SpeedTest/2.1.2//assets/server_cs.png">
+                        <div class="label auto">Automático </div>
+                        <div class="label os">Oficial</div>
+                        <div class="label ios">Oficial ISP</div>
+                        <div class="label ps">Premium</div>
+                        <div class="label ips">Premium ISP</div>
+                        <div class="label cs">Comunitário</div>
+                    </div>
+                    <div class="loader"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="480px" height="480px" viewBox="0 0 480 480" enable-background="new 0 0 480 480" xml:space="preserve" class="icon">    <g>        <g>            <path d="M240.82,427.041c-98.277,0-179.058-76.001-186.704-172.275l20.214,22.648c8.629,9.597,23.363,10.476,33.034,1.868                c9.582-8.576,10.394-23.378,1.81-32.967l-65.146-72.964l-23.416-27.86c-1.69,3.991-3.306,8.063-4.824,12.181                c-4.937,13.506-8.622,27.533-11.057,41.842c-2.233,13.178-3.306,26.684-3.306,40.338c0,63.978,24.882,124.067,70.038,169.245                c45.267,45.193,105.365,70.09,169.357,70.09c4.281,0,8.563-0.119,12.844-0.327l14.197-53.785                C259.054,426.386,249.985,427.041,240.82,427.041z"></path>        </g>        <g>            <path d="M414.95,75.61c-1.579-1.69-3.254-3.425-4.862-5.048C364.813,25.333,304.738,0.398,240.82,0.398                c-63.992,0-124.09,24.934-169.357,70.164c-13.394,13.431-25.016,28.173-34.754,43.905l35.953,42.915                C103.232,95.37,167.075,52.56,240.82,52.56c27.376,0,53.502,5.971,76.991,16.64l-21.755,10.445l-17.958,8.473                c-11.592,5.473-16.573,19.395-11.049,31.077c5.495,11.645,19.425,16.625,31.047,11.168l66.055-31.248l0,0L414.95,75.61z"></path>        </g>        <g>            <path d="M436.095,101.289l-48.483,22.507c25.321,31.933,40.412,72.271,40.412,116.057c0,58.564-26.951,110.853-69.232,145.286                l3.35-14.265l4.602-19.253c2.926-12.523-4.772-25.165-17.28-28.113c-12.583-3.008-25.15,4.765-28.136,17.287l-20.988,87.602                l-12.188,46.13c45.848-9.112,88.04-31.612,121.938-65.429c45.193-45.178,70.075-105.268,70.075-169.245                C480.163,189.493,464.729,141.501,436.095,101.289z"></path>        </g>    </g>    </svg>
+                        <div class="message">Estabelecendo conexão…</div>
+                    </div><button class="closeButton"></button></div>
+            </div>
+        </div>
+    </div>
+    <script id="nPerfJS" src="https://media.nperf.com/webplugin/dist/SpeedTest/2.1.2/js/nPartners-expert-light.min.o.js"></script>
+
+    <script>
+        function onLoad() {
+            setTimeout(function() {
+                new nPerfSpeedTest(document.getElementById("nPerf"), {
+                    licenseKey: '53d2bcd5-6714-49bb-be58-4ffb16997632',
+                    width: '600',
+                    height: '400',
+                    config: JSON.parse('{	"showMobileAppPopup": true, "useJavascriptCallback": true, "defaultLocale": "pt", "locationRequestTimeout": 3000,	"webserviceTimeout": 10000,	"allowIPv6": true,	"ipVersionTimeout": 3000,	"tlsPorts": [443,8443],	"tlsTestServer": "test-ipv4.nperf.net",	"checkPortsTimeout": 20000,	"connectionTimeout": 10000,	"ioTimeout": 3000,	"download": {		"duration": 15000,		"maxThreads": 16,		"blockSize": 104857600	},	"upload": {		"duration": 15000,		"maxThreads": 16,		"randomBufferSize": 1048576,		"maxBlockSize": 8388608, "requestQueueSize": 3	},	"latency": {		"samples": 20,		"interval": 200,		"timeout": 3000	}}'),
+                    gui: JSON.parse('{"theme":{"logo":"https:\/\/media.nperf.com\/flash\/theme\/licenses\/53d2bcd5-6714-49bb-be58-4ffb16997632\/logo_1465895981.png","layer":{"border":"#0099ff","title":{"text":"#0099ff"}},"speedTest":{"background":"#ffffff","serverIcon":{"primaryColor":"#ffffff","secondaryColor":"#ffffff"},"locationIcon":{"secondaryColor":"#005c99","primaryColor":"#ffffff"},"button":{"rectangle":{"border":"#005c99","background":"#005c99","backgroundOver":"#0099ff","text":"#ffffff","textOver":"#ffffff"},"round":{"color":"#005c99","colorOver":"#64fdff"},"unit":{"unselected":{"text":"#ffffff","legend":"#0099ff","border":"#005c99","background":"#005c99"},"selected":{"text":"#ffffff","legend":"#0099ff","border":"#6a6a6a","background":"#6a6a6a"},"over":{"text":"#ffffff","legend":"#0099ff","border":"#0099ff","background":"#0099ff"}}},"gauge":{"animatedRingColor":"#0099ff","restartButtonColor":"#0099ff","progressRingColor":"#0099ff","progressTextColor":"#0099ff","iconColor":"#0099ff"},"chart":{"download":{"topArea":"#0099ff","bottomArea":"#005c99","showAxes":false,"showAverage":false},"upload":{"topArea":"#0099ff","bottomArea":"#005c99","showAxes":false,"showAverage":false},"latency":{"bar":"#005c99","showAxes":false,"showAverage":false}},"panel":{"border":"#0099ff","strongText":"#0099ff","title":{"testing":"#0099ff"}}}}}'),
+
+
+                });
+            }, 200);
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
